@@ -122,13 +122,17 @@
 			<div class="body">
 				<p class="statement">Erst KI macht Wissenspflege unausweichlich – und bezahlbar.</p>
 				<p class="prose">
-					Firmenwissen altert - oft auch, wenn niemand daran arbeitet. Solange das Wissen durch
-					Menschen genutzt wurde (z.B. Wiki oder SharePoint), war das ärgerlich.
+					Firmenwissen altert - oft auch, wenn niemand daran arbeitet.
+					<br><br>
+					Dank ihres impliziten Wissens können menschliche Akteure schon immer gut mit
+					Widersprüchen, Ungenauigkeiten und veralteten Daten umgehen. Ungültiges, fehlerhaftes
+					Wissen ist zwar lästig, aber kein echtes Problem.
+					<br><br>
 					Sobald aber KI-Agenten damit arbeiten, wird es zum Risiko. Deshalb liefert taflux
 					nicht einfach das, was irgendwo steht, sondern das, was heute gilt – mit Datum,
 					Verbindlichkeit und einer Aussage, wer dafür einsteht.
-
-					Die KI bereitet die Pflege vor, aber die Menschen entscheiden. Sie macht
+					<br><br>
+					Die KI bereitet vor, aber die Menschen entscheiden. KI macht
 					die Pflege der Informationen bezahlbar – überflüssig macht sie sie aber nicht.
 				</p>
 			</div>
@@ -147,7 +151,8 @@
 					<div class="compare-col compare-col--tf">
 						<h3>Aus taflux</h3>
 						<p>
-							Eine Antwort mit Datum, Verbindlichkeit und der Stelle, die dafür einsteht. Darunter der Hinweis,
+							Eine Antwort mit Datum, Verbindlichkeit und einem Verantwortlichen, der dafür einsteht.
+							Darunter steht der Hinweis,
 							dass drei Wissensbausteine bewusst fehlen, weil sie das Haus nicht verlassen dürfen.
 						</p>
 					</div>
@@ -159,25 +164,26 @@
 		<section class="block" aria-labelledby="grundsaetze">
 			<h2 class="label" id="grundsaetze">Grundsätze</h2>
 			<ul class="body cells cells-2">
-				<li><h3>Aktualität beruht auf Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb laufen Bestätigungen ab, und neues Wissen legt betroffenes altes zur Prüfung vor. Was zu entscheiden ist, landet auf dem Tisch – entscheiden tun Menschen.</p></li>
-				<li><h3>Geltung bleibt beim Menschen</h3><p>Ob etwas gilt, bestätigt immer ein Mensch, und jede Bestätigung wird protokolliert. Ein KI-Agent hat dafür gar kein Werkzeug.</p></li>
+				<li><h3>Aktualität braucht Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb benötigt es Bestätigungen (periodisch und bei Widersprüchen), und neues Wissen legt betroffenes altes zur Prüfung vor. KI stellt fest und legt zur Prüfung vor - Menschen entscheiden.</p></li>
+				<li><h3>Gültigkeit und Geltung bleiben beim Menschen</h3><p>Ob etwas gilt, bestätigt immer ein Mensch, und jede Bestätigung wird protokolliert. Was gilt – das bereitet die KI vor – aber die Entscheidung bleibt beim Menschen (human in the loop).</p></li>
 				<li><h3>Wissen mit Kanten</h3><p>Wissensbausteine sind miteinander verknüpft, etwa durch «ersetzt» oder «Ausnahme von». Die KI schlägt Verknüpfungen vor, aber ein Mensch bestätigt sie. So zeigt jede Änderung, was sonst noch geprüft werden muss.</p></li>
 				<li><h3>Eine sichtbare Lücke</h3><p>Fehlt etwas, weil es vertraulich, ungeprüft oder veraltet ist, sagt die Antwort das offen, statt die Lücke mit Vermutungen zu füllen.</p></li>
-				<li><h3>Das Archiv bleibt</h3><p>Bestehende Dokumente bleiben, wo sie sind. taflux ersetzt weder Wiki noch Ablage, sondern hält daneben fest, was davon heute noch gilt.</p></li>
-				<li><h3>Der Schutz ist eine Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, ist in seinem Suchbestand gar nicht erst vorhanden. Solange niemand bestätigt hat, bleibt das Wissen im Haus.</p></li>
+				<li><h3>Das Archiv bleibt</h3><p>Bestehende Dokumente bleiben, wo sie sind. taflux ersetzt keine Cloud-Ablage, sondern hält daneben fest, was davon aktuell gilt.</p></li>
+				<li><h3>Schutz durch Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, ist in seinem Suchbestand gar nicht erst vorhanden. Solange niemand bestätigt hat, bleibt das Wissen im Haus.</p></li>
 			</ul>
 		</section>
 
-		<!-- Achsen -->
-		<section class="block" aria-labelledby="achsen">
-			<h2 class="label" id="achsen">Sechs Achsen</h2>
+		<!-- Dimensionen -->
+		<section class="block" aria-labelledby="dimensionen">
+			<h2 class="label" id="dimensionen">Sechs Dimensionen</h2>
 			<div class="body">
 				<p class="prose">
-					Jeder Wissensbaustein trägt seinen eigenen Zustand – auf sechs Achsen, die unabhängig voneinander
-					gesetzt werden. Dasselbe Mosaik sieht deshalb je nach Achse ganz anders aus. Wähle eine Achse:
+					Jeder Wissensbaustein trägt seinen eigenen Zustand – auf sechs Dimensionen, die 
+					unabhängig voneinander gesetzt werden. Dasselbe Mosaik sieht deshalb je nach 
+					Dimension ganz anders aus. Wähle eine Dimension:				
 				</p>
 				<div class="lens" data-lens>
-					<div class="lens-tabs" role="tablist" aria-label="Achse wählen" hidden>
+					<div class="lens-tabs" role="tablist" aria-label="Dimension wählen" hidden>
 						<button type="button" role="tab" id="tab-gueltigkeit" aria-controls="lens-gueltigkeit" aria-selected="true">Gültigkeit</button>
 						<button type="button" role="tab" id="tab-vertrauensgrad" aria-controls="lens-vertrauensgrad" aria-selected="false" tabindex="-1">Vertrauensgrad</button>
 						<button type="button" role="tab" id="tab-verbindlichkeit" aria-controls="lens-verbindlichkeit" aria-selected="false" tabindex="-1">Verbindlichkeit</button>
@@ -291,7 +297,7 @@
 			<h2 class="label" id="teile">Woraus taflux besteht</h2>
 			<ul class="body cells cells-2">
 				<li><h3>Format</h3><p class="sub">Open Knowledge Format (OKF) v0.2</p><p>Jede Markdown-Datei ist eine vollständige, gültige OKF-Datei – ohne Zusatzdatei und ohne Umwandlung beim Export. Was OKF nicht abdeckt, ergänzt taflux unter dem eigenen Schlüssel «taflux».</p></li>
-				<li><h3>Editor</h3><p class="sub">Erweiterter OKF-Editor auf Basis von Milkdown</p><p>Markdown für den Text, die sechs Achsen als Bedienelemente, dazu Prüfansicht und Drei-Spalten-Merge – so kann jeder mitarbeiten, auch ohne Git. Auf Deutsch, Französisch, Italienisch und Englisch.</p></li>
+				<li><h3>Editor</h3><p class="sub">Erweiterter OKF-Editor auf Basis von Milkdown</p><p>Markdown für den Text, die sechs Dimensionen als Bedienelemente, dazu Prüfansicht und Drei-Spalten-Merge – so kann jeder mitarbeiten, auch ohne Git. Auf Deutsch, Französisch, Italienisch und Englisch.</p></li>
 				<li><h3>MCP-Server</h3><p class="sub">Model Context Protocol</p><p>Verbindet taflux mit jedem KI-System, das MCP spricht. Sucht nach Stichworten und nach Bedeutung zugleich, kennt die Verknüpfungen zwischen den Wissensbausteinen und führt für jede Vertrauensstufe einen eigenen Suchbestand.</p></li>
 				<li><h3>Team</h3><p class="sub">Gemeinsam, mit klaren Zuständigkeiten</p><p>Wer im Team etwas ablegt oder bestätigt, steht mit seinem Namen dafür ein – und taflux merkt sich, wer wann wofür geradesteht. Wer was lesen und ändern darf, lässt sich eingrenzen: aufs Projektteam, eine Abteilung oder die Geschäftsleitung.</p></li>
 			</ul>
@@ -304,7 +310,7 @@
 				<li class="is-done">
 					<span class="when">Fertig</span>
 					<ul>
-						<li>Fundament, sechs Achsen, Suche und Editor</li>
+						<li>Fundament, sechs Dimensionen, Suche und Editor</li>
 						<li>Vertraulichkeits-Routing: ein Suchbestand je Vertrauensstufe</li>
 						<li>OKF-basierend: Import, Vertrauensgrad abgeleitet, Bundle Export</li>
 						<li>Oberfläche in vier Sprachen (DE, FR, IT, EN)</li>
