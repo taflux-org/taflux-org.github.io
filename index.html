@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>taflux – Wissen, auf das sich Mensch und KI verlassen können</title>
+	<meta name="description" content="taflux ist eine Open-Source-Wissensbasis für Mensch und KI: Jeder Wissensbaustein zeigt, ob er noch gilt, wer dafür einsteht und welches KI-System ihn sehen darf. Veröffentlichung am 30. November 2026.">
+	<meta name="color-scheme" content="light dark">
+	<meta name="theme-color" content="#f1eee8" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#1f2123" media="(prefers-color-scheme: dark)">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="taflux">
+	<meta property="og:description" content="Eine Wissensbasis für Mensch und KI, in der jeder Wissensbaustein zeigt, ob er noch gilt und wer dafür einsteht.">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<link rel="preload" href="fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		// Theme vor dem ersten Zeichnen setzen, damit nichts aufblitzt.
+		try {
+			var t = localStorage.getItem('taflux-theme');
+			if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+		} catch (e) {}
+	</script>
+	<script src="main.js" defer></script>
+</head>
+<body>
+	<a class="skip" href="#inhalt">Zum Inhalt</a>
+
+	<header class="bar wrap">
+		<a class="brand" href="./" aria-label="taflux – Startseite">
+			<svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true">
+				<rect x="0" y="0" width="8" height="8" rx="1"/><rect x="11" y="0" width="8" height="8" rx="1"/><rect x="22" y="0" width="8" height="8" rx="1"/>
+				<rect x="0" y="11" width="8" height="8" rx="1"/><rect class="gap" x="11.5" y="11.5" width="7" height="7" rx="1"/><rect x="22" y="11" width="8" height="8" rx="1"/>
+				<rect x="0" y="22" width="8" height="8" rx="1" class="acc"/><rect x="11" y="22" width="8" height="8" rx="1"/><rect x="22" y="22" width="8" height="8" rx="1" class="faded"/>
+			</svg>
+			<span>taflux</span>
+		</a>
+		<p class="badge" data-release-badge>
+			<span class="badge-tile" aria-hidden="true"></span>
+			<span data-release-text>Veröffentlichung am 30.&nbsp;November&nbsp;2026</span>
+		</p>
+		<button class="theme" type="button" data-theme-toggle aria-label="Hell- oder Dunkelmodus umschalten">
+			<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>
+		</button>
+	</header>
+
+	<main id="inhalt" class="wrap">
+		<!-- Kopf -->
+		<section class="hero" aria-labelledby="titel">
+			<dl class="facts">
+				<div><dt>Projekt</dt><dd>Open Source</dd></div>
+				<div><dt>Lizenz</dt><dd>Apache&nbsp;2.0</dd></div>
+				<div><dt>Veröffentlichung</dt><dd data-release-fact>30.&nbsp;November&nbsp;2026</dd></div>
+				<div><dt>Oberfläche</dt><dd>Deutsch, Französisch, Italienisch, Englisch</dd></div>
+			</dl>
+
+			<div class="hero-text">
+				<h1 id="titel">taflux</h1>
+				<p class="lead">
+					Eine Wissensbasis für Mensch und KI, in der jeder Wissensbaustein zeigt, ob er noch gilt und wer
+					dafür einsteht. Die KI hilft beim Pflegen – das letzte Wort haben immer noch wir.
+				</p>
+				<p class="actions">
+					<a class="btn btn-locked" data-release-cta aria-disabled="true">
+						taflux auf GitHub
+						<span class="btn-flag" data-release-flag>ab 30.11.2026</span>
+					</a>
+					<a class="btn btn-quiet" href="#mitmachen">Mitmachen</a>
+				</p>
+			</div>
+
+			<figure class="hero-mosaic">
+				<svg class="mosaic" viewBox="-2 -2 332 236" role="img" aria-label="Mosaik aus Wissensbausteinen: einer ist bestätigt, einer ist zur Prüfung fällig, einer fehlt, weil diese KI ihn nicht sehen darf.">
+				<rect class="t" style="--i:0" x="0.8" y="-1.4" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:1" x="46.8" y="1.0" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:2" x="96.4" y="-0.2" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:3" x="145.4" y="0.6" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:4" x="191.4" y="-1.0" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:5" x="238.6" y="1.2" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:6" x="289.0" y="-0.8" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:1" x="-0.2" y="48.3" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:2" x="48.6" y="48.8" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:3" x="95.0" y="46.8" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:4" x="145.2" y="48.4" width="40" height="40" rx="2"/>
+				<rect class="t-gap" x="191.9" y="50.1" width="38.5" height="38.5" rx="2"/>
+				<rect class="t" style="--i:6" x="240.3" y="47.4" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:7" x="288.8" y="46.6" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:2" x="-1.2" y="97.0" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:3" x="48.4" y="95.8" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:4" x="97.4" y="96.6" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:5" x="143.4" y="95.0" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:6" x="190.6" y="97.2" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:7" x="241.0" y="95.2" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:8" x="287.8" y="96.3" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:3" x="0.6" y="144.8" width="40" height="40" rx="2"/>
+				<rect class="t t-acc" style="--i:4" x="47.0" y="142.8" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:5" x="97.2" y="144.4" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:6" x="143.2" y="145.4" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:7" x="192.3" y="143.4" width="40" height="40" rx="2"/>
+				<rect class="t t-faded" style="--i:8" x="240.8" y="142.6" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:9" x="286.8" y="145.0" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:4" x="0.4" y="191.8" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:5" x="49.4" y="192.6" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:6" x="95.4" y="191.0" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:7" x="142.6" y="193.2" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:8" x="193.0" y="191.2" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:9" x="239.8" y="192.3" width="40" height="40" rx="2"/>
+				<rect class="t" style="--i:10" x="288.6" y="192.8" width="40" height="40" rx="2"/>
+				</svg>
+				<figcaption class="legend">
+					<span><i class="sw sw-acc" aria-hidden="true"></i>bestätigt</span>
+					<span><i class="sw sw-faded" aria-hidden="true"></i>Prüfung fällig</span>
+					<span><i class="sw sw-gap" aria-hidden="true"></i>für diese KI nicht sichtbar</span>
+				</figcaption>
+			</figure>
+		</section>
+
+		<!-- Warum -->
+		<section class="block" aria-labelledby="warum">
+			<h2 class="label" id="warum">Warum</h2>
+			<div class="body">
+				<p class="statement">Erst KI macht Wissenspflege unausweichlich – und bezahlbar.</p>
+				<p class="prose">
+					Firmenwissen altert, auch wenn niemand daran arbeitet. Solange am Ende ein Mensch nachgedacht hat,
+					war das ärgerlich. Sobald aber KI-Agenten damit arbeiten, wird es zum Risiko. Deshalb liefert taflux
+					nicht einfach, was irgendwo steht, sondern was heute gilt – mit Datum, Verbindlichkeit und einer
+					Stelle, die dafür einsteht. Die KI bereitet die Pflege vor, aber die Menschen entscheiden. Sie macht
+					die Pflege bezahlbar – überflüssig macht sie sie nicht.
+				</p>
+			</div>
+		</section>
+
+		<!-- Ziel -->
+		<section class="block" aria-labelledby="ziel">
+			<h2 class="label" id="ziel">Das Ziel</h2>
+			<div class="body">
+				<p class="prose">So soll es sich anfühlen: dieselbe Frage, zweimal an die KI gestellt.</p>
+				<div class="compare">
+					<div class="compare-col">
+						<h3>Aus dem Archiv</h3>
+						<p>Vierzig Treffer. Keiner weiss, wie alt sie sind – und ob überhaupt noch einer davon gilt.</p>
+					</div>
+					<div class="compare-col compare-col--tf">
+						<h3>Aus taflux</h3>
+						<p>
+							Eine Antwort mit Datum, Verbindlichkeit und der Stelle, die dafür einsteht. Darunter der Hinweis,
+							dass drei Wissensbausteine bewusst fehlen, weil sie das Haus nicht verlassen dürfen.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Grundsätze -->
+		<section class="block" aria-labelledby="grundsaetze">
+			<h2 class="label" id="grundsaetze">Grundsätze</h2>
+			<ul class="body cells cells-2">
+				<li><h3>Aktualität beruht auf Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb laufen Bestätigungen ab, und neues Wissen legt betroffenes altes zur Prüfung vor. Was zu entscheiden ist, landet auf dem Tisch – entscheiden tun Menschen.</p></li>
+				<li><h3>Geltung bleibt beim Menschen</h3><p>Ob etwas gilt, bestätigt immer ein Mensch, und jede Bestätigung wird protokolliert. Ein KI-Agent hat dafür gar kein Werkzeug.</p></li>
+				<li><h3>Wissen mit Kanten</h3><p>Wissensbausteine sind miteinander verknüpft, etwa durch «ersetzt» oder «Ausnahme von». Die KI schlägt Verknüpfungen vor, aber ein Mensch bestätigt sie. So zeigt jede Änderung, was sonst noch geprüft werden muss.</p></li>
+				<li><h3>Eine sichtbare Lücke</h3><p>Fehlt etwas, weil es vertraulich, ungeprüft oder veraltet ist, sagt die Antwort das offen, statt die Lücke mit Vermutungen zu füllen.</p></li>
+				<li><h3>Das Archiv bleibt</h3><p>Bestehende Dokumente bleiben, wo sie sind. taflux ersetzt weder Wiki noch Ablage, sondern hält daneben fest, was davon heute noch gilt.</p></li>
+				<li><h3>Der Schutz ist eine Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, ist in seinem Suchbestand gar nicht erst vorhanden. Solange niemand bestätigt hat, bleibt das Wissen im Haus.</p></li>
+			</ul>
+		</section>
+
+		<!-- Achsen -->
+		<section class="block" aria-labelledby="achsen">
+			<h2 class="label" id="achsen">Sechs Achsen</h2>
+			<div class="body">
+				<p class="prose">Jeder Wissensbaustein trägt seinen eigenen Zustand – auf sechs Achsen, die unabhängig voneinander gesetzt werden.</p>
+				<ul class="cells cells-3">
+					<li><h3>Gültigkeit</h3><p>Gilt das noch, oder wurde es abgelöst – und wenn ja, wodurch?</p></li>
+					<li><h3>Vertrauensgrad</h3><p>Hat ein Mensch genau diesen Text bestätigt? taflux leitet das aus den Bestätigungen ab, statt es abzuspeichern. Ändert sich der Text, verliert er seine Bestätigung.</p></li>
+					<li><h3>Verbindlichkeit</h3><p>Ist es eine verbindliche Vorgabe, eine Empfehlung oder eine Information? Danach richten sich Rangfolge und Tonfall der Antwort.</p></li>
+					<li><h3>Vertraulichkeit</h3><p>Wer darf das sehen, und welches KI-System darf damit arbeiten? Für jede Vertrauensstufe gibt es einen eigenen Suchbestand.</p></li>
+					<li><h3>Aufbewahrungszweck</h3><p>Warum bleibt etwas erhalten, das nicht mehr gilt? Als Lehre, als Teil der Geschichte oder als Referenz.</p></li>
+					<li><h3>Autonomiegrad</h3><p>Darf die KI das abgelegte Wissen oder seine Metadaten ändern? Nur auf Wunsch, in einem festgelegten Rahmen oder eigenständig. Mehr Freiheit geben kann ihr nur ein Mensch – und bestätigen kann sie nie etwas.</p></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Format -->
+		<section class="block" aria-labelledby="format">
+			<h2 class="label" id="format">Eine Datei</h2>
+			<div class="body split">
+				<div>
+					<p class="statement statement-s">
+						KI-Modelle kommen und gehen, das Wissen bleibt. Wer den Anbieter wechselt, nimmt seine
+						Wissensbasis einfach mit.
+					</p>
+					<p class="prose">
+						Alles liegt als gewöhnliches Markdown in Git, im offenen Open Knowledge Format (OKF). Was taflux
+						über einen Wissensbaustein weiss, steht im YAML-Kopf der Datei – eine Zeile pro Wissensbaustein.
+						So bleibt jede Änderung im Diff lesbar, und ein einfaches <code>grep</code> findet sie. Beim
+						Export wird nichts übersetzt, sondern nur weggelassen, was nicht hinaus darf.
+					</p>
+				</div>
+				<pre class="code" aria-label="Beispiel eines YAML-Kopfs"><code><span class="k">type:</span> guideline
+<span class="k">title:</span> Spesenreglement
+<span class="k">status:</span> draft
+<span class="k">taflux:</span>
+  <span class="k">profile:</span> taflux-okf/1
+  <span class="k">sections:</span>
+    - { id: sec-b1e8d4, validity: current,
+        tier: binding, classification: internal, … }
+    - { id: sec-c2f9a1, validity: superseded,
+        superseded_by: sec-d4e117, … }</code></pre>
+			</div>
+		</section>
+
+		<!-- Teile -->
+		<section class="block" aria-labelledby="teile">
+			<h2 class="label" id="teile">Woraus taflux besteht</h2>
+			<ul class="body cells cells-2">
+				<li><h3>Format</h3><p class="sub">Open Knowledge Format (OKF) v0.2</p><p>Jede Markdown-Datei ist eine vollständige, gültige OKF-Datei – ohne Zusatzdatei und ohne Umwandlung beim Export. Was OKF nicht abdeckt, ergänzt taflux unter dem eigenen Schlüssel «taflux».</p></li>
+				<li><h3>Editor</h3><p class="sub">Erweiterter OKF-Editor auf Basis von Milkdown</p><p>Markdown für den Text, die sechs Achsen als Bedienelemente, dazu Prüfansicht und Drei-Spalten-Merge – so kann jeder mitarbeiten, auch ohne Git. Auf Deutsch, Französisch, Italienisch und Englisch.</p></li>
+				<li><h3>MCP-Server</h3><p class="sub">Model Context Protocol</p><p>Verbindet taflux mit jedem KI-System, das MCP spricht. Sucht nach Stichworten und nach Bedeutung zugleich, kennt die Verknüpfungen zwischen den Wissensbausteinen und führt für jede Vertrauensstufe einen eigenen Suchbestand.</p></li>
+				<li><h3>Team</h3><p class="sub">Gemeinsam, mit klaren Zuständigkeiten</p><p>Wer im Team etwas ablegt oder bestätigt, steht mit seinem Namen dafür ein – und taflux merkt sich, wer wann wofür geradesteht. Wer was lesen und ändern darf, lässt sich eingrenzen: aufs Projektteam, eine Abteilung oder die Geschäftsleitung.</p></li>
+			</ul>
+		</section>
+
+		<!-- Stand -->
+		<section class="block" aria-labelledby="stand">
+			<h2 class="label" id="stand">Stand</h2>
+			<ol class="body timeline">
+				<li class="is-done">
+					<span class="when">Fertig</span>
+					<ul>
+						<li>Fundament, sechs Achsen, Suche und Editor</li>
+						<li>Vertraulichkeits-Routing: ein Suchbestand je Vertrauensstufe</li>
+						<li>OKF-basierend: Import, Vertrauensgrad abgeleitet, Bundle Export</li>
+						<li>Oberfläche in vier Sprachen (DE, FR, IT, EN)</li>
+					</ul>
+				</li>
+				<li class="is-now">
+					<span class="when">November 2026</span>
+					<ul>
+						<li>Bundles mit Leserkreis, Adressierung und Inbox</li>
+						<li>Geteilter Betrieb für Teams</li>
+						<li>taflux demo: ein vollständiges Demo-Repository mit einem einzigen Befehl</li>
+						<li>OKF-nativ: alles in einer Datei, Vertrauensgrad abgeleitet, Export als Filter</li>
+					</ul>
+				</li>
+				<li class="is-release">
+					<span class="when">30. November 2026</span>
+					<p data-release-row>Veröffentlichung als Open Source auf GitHub, unter <a href="https://github.com/taflux-org" rel="noopener">github.com/taflux-org</a>.</p>
+				</li>
+				<li>
+					<span class="when">Danach</span>
+					<dl class="roadmap">
+						<div><dt>Maschinelle Pflege</dt><dd>Die KI bereitet fällige Prüfungen vor und kümmert sich um kleine Änderungen – je nachdem, wie viel Freiheit man ihr vorher zugesteht, als Vorschlag oder gleich selbst. Bestätigen kann sie aber nichts: Was sie ändert, gilt erst wieder, wenn ein Mensch es abgesegnet hat.</dd></div>
+						<div><dt>Nachweis und Messung</dt><dd>Audit-Berichte, fälschungssichere Quittungen und ein reproduzierbarer Benchmark für die Suche.</dd></div>
+						<div><dt>Bestandsübernahme</dt><dd>Bestehende Dokumente übernehmen und in Wissensbausteine zerlegen, mit Schutz vor Personendaten.</dd></div>
+						<div><dt>Fakten-Tripel</dt><dd>Widersprüche werden nicht mehr nur vermutet, sondern regelbasiert erkannt – auch beim Zusammenführen von Änderungen.</dd></div>
+						<div><dt>Source Watcher</dt><dd>Ändert sich ein Quelldokument, legt taflux die betroffenen Wissensbausteine zur Prüfung vor.</dd></div>
+					</dl>
+				</li>
+			</ol>
+		</section>
+
+		<!-- Mitmachen -->
+		<section class="block" id="mitmachen" aria-labelledby="mitmachen-titel">
+			<h2 class="label">Mitmachen</h2>
+			<div class="body">
+				<p class="statement" id="mitmachen-titel">Neugierig, kritisch oder mit Lust mitzumachen?</p>
+				<p class="prose">
+					Wenn du beim Lesen an drei Stellen denkst «das ist falsch gelöst» – dann will ich genau diese drei
+					Stellen hören. Feedback, Anwendungsfälle und Sparring sind genauso willkommen, gerade jetzt rund um
+					den Release.
+				</p>
+				<p class="actions">
+					<a class="btn" href="#mitmachen" data-mail="taflux">Nachricht schreiben</a>
+					<a class="btn btn-quiet" href="https://github.com/taflux-org" rel="noopener">GitHub-Organisation ansehen</a>
+				</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="foot wrap">
+		<p>taflux ist ein Open-Source-Projekt von Gabriel Welsche, veröffentlicht unter der Apache-Lizenz 2.0.</p>
+		<p><a href="impressum.html">Impressum und Datenschutz</a></p>
+	</footer>
+</body>
+</html>
