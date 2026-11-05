@@ -510,6 +510,191 @@ h3 + p {
 	color: var(--muted);
 }
 
+/* ---------- Sechs Achsen: dasselbe Mosaik durch sechs Brillen ---------- */
+.lens {
+	margin-top: var(--space-m);
+}
+.lens-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+.lens-tabs[hidden] {
+	display: none;
+}
+.lens-tabs button {
+	padding: 0.45rem 0.8rem;
+	border: 1px solid var(--rule);
+	border-radius: 2px;
+	background: transparent;
+	color: var(--ink-soft);
+	font: inherit;
+	font-size: 0.9rem;
+	font-weight: 500;
+	line-height: 1.2;
+	cursor: pointer;
+	transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.lens-tabs button:hover {
+	border-color: var(--ink);
+	color: var(--ink);
+}
+.lens-tabs button[aria-selected='true'] {
+	background: var(--ink);
+	border-color: var(--ink);
+	color: var(--stone);
+}
+.lens-stage {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+	gap: var(--space-m) var(--gutter);
+	align-items: start;
+	margin-top: var(--space-m);
+}
+.lens-figure {
+	position: sticky;
+	top: var(--space-m);
+}
+.lens-mosaic {
+	display: block;
+	width: 100%;
+	max-width: 22rem;
+	height: auto;
+	overflow: visible;
+}
+
+/* Ein Stein = Fläche (.f) + gestrichelter Umriss (.o) für die Lücke */
+.lt .f {
+	fill: var(--ink);
+	fill-opacity: 0.88;
+	stroke: var(--ink);
+	stroke-width: 1.5;
+	stroke-opacity: 0;
+	transform-box: fill-box;
+	transform-origin: center;
+}
+.lt .o {
+	fill: none;
+	stroke: var(--muted);
+	stroke-width: 1.25;
+	stroke-dasharray: 4 3.5;
+	opacity: 0;
+}
+.lt[data-s='c'] .f {
+	fill: var(--clay);
+	stroke: var(--clay);
+	fill-opacity: 1;
+}
+.lt[data-s='m'] .f {
+	fill-opacity: 0.42;
+}
+.lt[data-s='f'] .f {
+	fill-opacity: 0.12;
+}
+.lt[data-s='o'] .f {
+	fill-opacity: 0;
+	stroke-opacity: 0.9;
+	transform: scale(0.94);
+}
+.lt[data-s='g'] .f {
+	fill-opacity: 0;
+	transform: scale(0.4);
+}
+.lt[data-s='g'] .o {
+	opacity: 1;
+}
+
+.lens-panel h3 + .lens-def {
+	margin-top: 0.4rem;
+}
+.lens-story {
+	margin-top: var(--space-s);
+	padding-top: var(--space-s);
+	border-top: 1px solid var(--rule);
+	color: var(--ink);
+	font-family: var(--serif);
+	font-size: 1.2rem;
+	font-variation-settings: 'opsz' 18;
+	line-height: 1.5;
+}
+.lens-legend {
+	display: grid;
+	gap: 0.35rem;
+	margin-top: var(--space-s);
+	padding: 0;
+	list-style: none;
+	color: var(--muted);
+	font-size: var(--fs-small);
+}
+.lens-legend li {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+}
+.lens-legend .n {
+	margin-left: auto;
+	min-width: 2ch;
+	color: var(--ink);
+	font-variant-numeric: tabular-nums;
+	text-align: right;
+}
+.lens-legend {
+	max-width: 24rem;
+}
+.sw-s {
+	background: color-mix(in srgb, var(--ink) 88%, transparent);
+}
+.sw-c {
+	background: var(--clay);
+}
+.sw-m {
+	background: color-mix(in srgb, var(--ink) 42%, transparent);
+}
+.sw-f {
+	background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.sw-o {
+	border: 1.5px solid var(--ink);
+}
+.sw-g {
+	border: 1px dashed var(--muted);
+}
+
+/* Ohne JS stehen alle Erklärungen untereinander; mit JS nur die gewählte. */
+.lens.is-ready .lens-panel[data-hidden] {
+	display: none;
+}
+.lens:not(.is-ready) .lens-panel + .lens-panel {
+	margin-top: var(--space-m);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.lt .f,
+	.lt .o {
+		transition: fill 0.5s ease, fill-opacity 0.5s ease, stroke-opacity 0.5s ease, opacity 0.5s ease,
+			transform 0.55s cubic-bezier(0.3, 0.7, 0.2, 1.2);
+		transition-delay: calc(var(--i, 0) * 40ms);
+	}
+	.lens.is-ready .lens-panel {
+		animation: panel-in 0.45s ease both;
+	}
+	@keyframes panel-in {
+		from {
+			opacity: 0;
+			transform: translateY(0.4rem);
+		}
+	}
+}
+
+@media (max-width: 760px) {
+	.lens-stage {
+		grid-template-columns: 1fr;
+	}
+	.lens-figure {
+		position: static;
+	}
+}
+
 /* Format: Text und Beispiel nebeneinander */
 .split {
 	display: grid;

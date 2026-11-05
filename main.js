@@ -1,3 +1,5 @@
+// taflux – Landingpage: Hell/Dunkel-Umschalter, Release-Hinweis und E-Mail-Link.
+
 (function () {
 	var root = document.documentElement;
 
@@ -18,7 +20,58 @@
 		});
 	}
 
+	// ---------- Sechs Achsen: dasselbe Mosaik durch sechs Brillen ----------
+	// Jeder Reiter bringt in data-states 24 Zeichen mit, einen Zustand pro Stein:
+	// s = gesetzt, c = hervorgehoben, m = halb, f = blass, o = Umriss, g = Lücke.
+	var lens = document.querySelector('[data-lens]');
+	if (lens) {
+		var tablist = lens.querySelector('[role="tablist"]');
+		var tabs = Array.prototype.slice.call(lens.querySelectorAll('[role="tab"]'));
+		var panels = Array.prototype.slice.call(lens.querySelectorAll('[role="tabpanel"]'));
+		var tiles = Array.prototype.slice.call(lens.querySelectorAll('.lt'));
+
+		var show = function (index, focus) {
+			tabs.forEach(function (tab, i) {
+				var on = i === index;
+				tab.setAttribute('aria-selected', on ? 'true' : 'false');
+				tab.tabIndex = on ? 0 : -1;
+				if (on && focus) tab.focus();
+			});
+			panels.forEach(function (panel, i) {
+				if (i === index) panel.removeAttribute('data-hidden');
+				else panel.setAttribute('data-hidden', '');
+			});
+			var states = panels[index].getAttribute('data-states') || '';
+			tiles.forEach(function (tile, i) {
+				if (states[i]) tile.setAttribute('data-s', states[i]);
+			});
+		};
+
+		tabs.forEach(function (tab, i) {
+			tab.addEventListener('click', function () {
+				show(i, false);
+			});
+			tab.addEventListener('keydown', function (e) {
+				var next = null;
+				if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+				if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+				if (e.key === 'Home') next = 0;
+				if (e.key === 'End') next = tabs.length - 1;
+				if (next !== null) {
+					e.preventDefault();
+					show(next, true);
+				}
+			});
+		});
+
+		tablist.hidden = false;
+		lens.classList.add('is-ready');
+		show(0, false);
+	}
+
 	// ---------- E-Mail ----------
+	// Die Adresse steht nirgends im Klartext: Sie wird erst zusammengesetzt, wenn jemand
+	// scrollt oder den Link berührt bzw. per Tastatur ansteuert. Einfache Sammel-Bots tun das nicht.
 	var mailLinks = document.querySelectorAll('[data-mail]');
 	if (mailLinks.length) {
 		var CODES = [111, 106, 53, 108, 111, 106, 122, 115, 108, 126, 71, 115, 108, 112, 121, 105, 104, 110];
