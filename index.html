@@ -62,7 +62,7 @@
 		<div class="hero-text">
 			<h1 id="titel">taflux</h1>
 			<p class="lead">
-				Eine Wissensbasis für Mensch und KI, in der jeder Wissensbaustein zeigt, ob er noch gilt und wer
+				Eine Wissensbasis für Mensch und KI, in der jedes Steinchen im Wissensmosaik zeigt, ob es noch gilt und wer
 				dafür einsteht. Die KI hilft – das letzte Wort haben aber immer noch wir.
 			</p>
 			<p class="actions">
@@ -75,7 +75,7 @@
 		</div>
 
 		<figure class="hero-mosaic">
-			<svg class="mosaic" viewBox="-2 -2 332 236" role="img" aria-label="Mosaik aus Wissensbausteinen: einer ist bestätigt, einer ist zur Prüfung fällig, einer fehlt, weil diese KI ihn nicht sehen darf.">
+			<svg class="mosaic" viewBox="-2 -2 332 236" role="img" aria-label="Ein Wissensmosaik: Ein Steinchen ist bestätigt, eines ist zur Prüfung fällig, eines fehlt, weil diese KI es nicht sehen darf.">
 				<rect class="t d0" x="0.8" y="-1.4" width="40" height="40" rx="2"/>
 				<rect class="t d1" x="46.8" y="1.0" width="40" height="40" rx="2"/>
 				<rect class="t d2" x="96.4" y="-0.2" width="40" height="40" rx="2"/>
@@ -148,7 +148,7 @@
 					<p>
 						Eine Antwort mit Datum, Verbindlichkeit und einem Verantwortlichen, der dafür einsteht.
 						Darunter steht der Hinweis,
-						dass drei Wissensbausteine bewusst fehlen, weil sie das Haus nicht verlassen dürfen.
+						dass drei Steinchen bewusst fehlen, weil sie das Haus nicht verlassen dürfen.
 					</p>
 				</div>
 			</div>
@@ -159,11 +159,11 @@
 	<section class="block" aria-labelledby="grundsaetze">
 		<h2 class="label" id="grundsaetze">Grundsätze</h2>
 		<ul class="body cells cells-2">
-			<li><h3>Aktualität braucht Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb benötigt es Bestätigungen (periodisch und bei Widersprüchen), und neues Wissen legt betroffenes altes zur Prüfung vor. KI stellt fest und schlägt vor - Menschen entscheiden.</p></li>
+			<li><h3>Aktualität braucht Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb benötigt es Bestätigungen (periodisch und bei Widersprüchen), und neues Wissen legt betroffenes altes zur Prüfung vor. KI stellt fest und schlägt vor – Menschen entscheiden.</p></li>
 			<li><h3>Gültigkeit und Geltung bleiben beim Menschen</h3><p>Ob etwas gilt, bestätigt immer ein Mensch, und jede Bestätigung wird protokolliert. Was gilt – das bereitet die KI vor – aber die Entscheidung bleibt beim Menschen (human in the loop).</p></li>
 			<li><h3>Wissen mit Kanten</h3><p>Wissensbausteine existieren nicht isoliert: Sie sind durch logische Verknüpfungen – wie „Ersetzt durch“ oder „Ausnahme von“ – miteinander vernetzt. Die KI schlägt solche Verknüpfungen vor, die vom Menschen geprüft und freigegeben werden. So wird bei jeder Änderung sichtbar, was sonst alles geprüft werden sollte.</p></li>
 			<li><h3>Sichtbare Lücken</h3><p>Fehlen vertrauliche, ungeprüfte oder veraltete Daten, macht die Antwort diese Lücke sichtbar, statt sie zu verschweigen oder mit Vermutungen zu füllen.</p></li>
-			<li><h3>Schutz durch Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, existiert in ihrem Suchbestand überhaupt nicht. Die in taflux hinterlegten Unternehmens-Policies bestimmen im Vorfeld für jedes System, welche Daten indiziert werden. Da nicht freigegebenes Wissen im Index physisch abwesend ist, sind sensible Daten selbst bei einem Systemeinbruch vor ungewolltem Abfluss geschützt.</p></li>
+			<li><h3>Schutz durch Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, existiert in seinem Suchbestand überhaupt nicht. Die in taflux hinterlegten Unternehmens-Policies bestimmen im Vorfeld für jedes System, welche Daten indiziert werden. Da nicht freigegebenes Wissen im Index physisch abwesend ist, sind sensible Daten selbst bei einem Systemeinbruch vor ungewolltem Abfluss geschützt.</p></li>
 			<li><h3>Versionshistorie schafft Nachvollziehbarkeit</h3><p>Bestehende Dokumente bleiben, wo sie sind. taflux ersetzt keine Cloud-Ablage, sondern hält daneben fest, was davon aktuell gilt.</p></li>
 		</ul>
 	</section>
@@ -173,7 +173,7 @@
 		<h2 class="label" id="dimensionen">Sechs Dimensionen</h2>
 		<div class="body">
 			<p class="prose">
-				Jeder Wissensbaustein trägt seinen eigenen Zustand – auf sechs Dimensionen, die
+				Jeder Wissensbaustein – jedes Steinchen im Mosaik – trägt seinen eigenen Zustand auf sechs Dimensionen, die
 				unabhängig voneinander gesetzt werden. Dasselbe Mosaik sieht deshalb je nach
 				Dimension ganz anders aus. Wähle eine Dimension:
 			</p>
@@ -237,13 +237,13 @@
 						<div class="lens-panel" role="tabpanel" id="lens-vertraulichkeit" aria-labelledby="tab-vertraulichkeit" data-states="sssgssgsssgssssgsssgssgs" data-hidden>
 							<h3>Vertraulichkeit</h3>
 							<p class="lens-def">Wer darf das sehen, und welches KI-System darf damit arbeiten? Für jede Vertrauensstufe gibt es einen eigenen Suchbestand.</p>
-							<p class="lens-story">Marco fragt einen Cloud-Assistenten nach den Projektkosten. Die Kalkulationen darf dieser nie sehen – in seinem Suchbestand sind sie gar nicht vorhanden. Die Antwort sagt deshalb dazu, dass sechs Wissensbausteine bewusst fehlen. Für die vollständige Antwort wechselt Marco ins lokale Modell.</p>
+							<p class="lens-story">Marco fragt einen Cloud-Assistenten nach den Projektkosten. Die Kalkulationen darf dieser nie sehen – in seinem Suchbestand sind sie gar nicht vorhanden. Die Antwort sagt deshalb dazu, dass sechs Steinchen bewusst fehlen. Für die vollständige Antwort wechselt Marco ins lokale Modell.</p>
 							<ul class="lens-legend"><li><i class="sw sw-s" aria-hidden="true"></i>für die Cloud-KI sichtbar<span class="n">18</span></li><li><i class="sw sw-g" aria-hidden="true"></i>bleibt im Haus, fehlt<span class="n">6</span></li></ul>
 						</div>
 						<div class="lens-panel" role="tabpanel" id="lens-aufbewahrungszweck" aria-labelledby="tab-aufbewahrungszweck" data-states="fffcffffffsffffffcfffoff" data-hidden>
 							<h3>Aufbewahrungszweck</h3>
 							<p class="lens-def">Warum bleibt etwas erhalten, das nicht mehr gilt? Als Lehre, als Teil der Geschichte oder als Referenz.</p>
-							<p class="lens-story">Die vier abgelösten Steine aus «Gültigkeit» sind nicht verschwunden. Die gescheiterte Migration von 2021 bleibt als Lehre, das alte Organigramm als Geschichte, die frühere Norm als Referenz. Als geltende Regel gibt die KI keinen davon aus.</p>
+							<p class="lens-story">Die vier abgelösten Steinchen aus «Gültigkeit» sind nicht verschwunden. Die gescheiterte Migration von 2021 bleibt als Lehre, das alte Organigramm als Geschichte, die frühere Norm als Referenz. Als geltende Regel gibt die KI keinen davon aus.</p>
 							<ul class="lens-legend"><li><i class="sw sw-f" aria-hidden="true"></i>gilt, braucht keinen Zweck<span class="n">20</span></li><li><i class="sw sw-c" aria-hidden="true"></i>Lehre<span class="n">2</span></li><li><i class="sw sw-s" aria-hidden="true"></i>Geschichte<span class="n">1</span></li><li><i class="sw sw-o" aria-hidden="true"></i>Referenz<span class="n">1</span></li></ul>
 						</div>
 						<div class="lens-panel" role="tabpanel" id="lens-autonomiegrad" aria-labelledby="tab-autonomiegrad" data-states="omsoommsomsoomsmomsommos" data-hidden>
@@ -307,7 +307,7 @@
 				<ul>
 					<li>Fundament, sechs Dimensionen, Suche und Editor</li>
 					<li>Vertraulichkeits-Routing: ein Suchbestand je Vertrauensstufe</li>
-					<li>OKF-basierend: Import, Vertrauensgrad abgeleitet, Bundle Export</li>
+					<li>OKF-basiert: Import, Vertrauensgrad abgeleitet, Bundle-Export</li>
 					<li>Oberfläche in vier Sprachen (DE, FR, IT, EN)</li>
 				</ul>
 			</li>
