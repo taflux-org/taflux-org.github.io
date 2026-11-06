@@ -1,6 +1,6 @@
 # taflux – Landingpage
 
-Statische Landingpage für [taflux](https://github.com/taflux-org), ausgeliefert über GitHub Pages.
+Statische Landingpage für [taflux.ch](https://taflux.ch), ausgeliefert über GitHub Pages.
 
 - `index.html` – die Seite
 - `style.css` – Gestaltung inkl. Hell-/Dunkelmodus
