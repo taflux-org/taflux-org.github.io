@@ -506,9 +506,6 @@ h3 + p {
 .prose + .cells {
 	margin-top: var(--space-m);
 }
-.compare-col:first-child p {
-	color: var(--muted);
-}
 
 /* ---------- Sechs Achsen: dasselbe Mosaik durch sechs Brillen ---------- */
 .lens {
