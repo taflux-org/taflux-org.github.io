@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>taflux – Knowledge that people and AI can rely on</title>
+	<meta name="description" content="taflux is an open-source knowledge base for people and AI: every knowledge block shows whether it still applies, who stands behind it and which AI system may see it. Release on 30 November 2026.">
+	<meta name="color-scheme" content="light dark">
+	<meta name="theme-color" content="#f1eee8" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#1f2123" media="(prefers-color-scheme: dark)">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_GB">
+	<meta property="og:locale:alternate" content="de_CH">
+	<meta property="og:title" content="taflux">
+	<meta property="og:description" content="A knowledge base for people and AI in which every knowledge block shows whether it still applies and who stands behind it.">
+	<!-- Language versions: main.js reads these links for automatic language selection, so they come before the script. -->
+	<link rel="alternate" hreflang="de" href="./">
+	<link rel="alternate" hreflang="en" href="index_en.html">
+	<link rel="alternate" hreflang="x-default" href="./">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<link rel="preload" href="fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Deliberately without defer: language and theme are settled before anything is drawn. -->
+	<script src="main.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="bar wrap">
+	<a class="brand" href="index_en.html" aria-label="taflux – home">
+		<svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true">
+			<rect x="0" y="0" width="8" height="8" rx="1"/><rect x="11" y="0" width="8" height="8" rx="1"/><rect x="22" y="0" width="8" height="8" rx="1"/>
+			<rect x="0" y="11" width="8" height="8" rx="1"/><rect class="gap" x="11.5" y="11.5" width="7" height="7" rx="1"/><rect x="22" y="11" width="8" height="8" rx="1"/>
+			<rect x="0" y="22" width="8" height="8" rx="1" class="acc"/><rect x="11" y="22" width="8" height="8" rx="1"/><rect x="22" y="22" width="8" height="8" rx="1" class="faded"/>
+		</svg>
+		<span>taflux</span>
+	</a>
+	<p class="badge" data-release-badge>
+		<span class="badge-tile" aria-hidden="true"></span>
+		<span data-release-text>Release on 30&nbsp;November&nbsp;2026</span>
+	</p>
+	<nav class="lang" aria-label="Choose language">
+		<a href="./" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+		<a href="index_en.html" hreflang="en" lang="en" data-lang="en" aria-current="page" aria-label="English">EN</a>
+	</nav>
+	<button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark mode">
+		<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>
+	</button>
+</header>
+
+<main id="content" class="wrap">
+	<!-- Hero -->
+	<section class="hero" aria-labelledby="title">
+		<dl class="facts">
+			<div><dt>Project</dt><dd>Open source</dd></div>
+			<div><dt>Licence</dt><dd>Apache&nbsp;2.0</dd></div>
+			<div><dt>Release</dt><dd data-release-fact>30&nbsp;November&nbsp;2026</dd></div>
+			<div><dt>Interface</dt><dd>German, French, Italian, English</dd></div>
+		</dl>
+
+		<div class="hero-text">
+			<h1 id="title">taflux</h1>
+			<p class="lead">
+				A knowledge base for people and AI in which every knowledge block shows whether it still applies
+				and who stands behind it. AI helps – but we still have the final say.
+			</p>
+			<p class="actions">
+				<a class="btn btn-locked" data-release-cta aria-disabled="true">
+					taflux on GitHub
+					<span class="btn-flag" data-release-flag>from 30 Nov 2026</span>
+				</a>
+				<a class="btn btn-quiet" href="#get-involved">Get involved</a>
+			</p>
+		</div>
+
+		<figure class="hero-mosaic">
+			<svg class="mosaic" viewBox="-2 -2 332 236" role="img" aria-label="Mosaic of knowledge blocks: one is confirmed, one is due for review, one is missing because this AI is not allowed to see it.">
+				<rect class="t d0" x="0.8" y="-1.4" width="40" height="40" rx="2"/>
+				<rect class="t d1" x="46.8" y="1.0" width="40" height="40" rx="2"/>
+				<rect class="t d2" x="96.4" y="-0.2" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="145.4" y="0.6" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="191.4" y="-1.0" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="238.6" y="1.2" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="289.0" y="-0.8" width="40" height="40" rx="2"/>
+				<rect class="t d1" x="-0.2" y="48.3" width="40" height="40" rx="2"/>
+				<rect class="t d2" x="48.6" y="48.8" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="95.0" y="46.8" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="145.2" y="48.4" width="40" height="40" rx="2"/>
+				<rect class="t-gap" x="191.9" y="50.1" width="38.5" height="38.5" rx="2"/>
+				<rect class="t d6" x="240.3" y="47.4" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="288.8" y="46.6" width="40" height="40" rx="2"/>
+				<rect class="t d2" x="-1.2" y="97.0" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="48.4" y="95.8" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="97.4" y="96.6" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="143.4" y="95.0" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="190.6" y="97.2" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="241.0" y="95.2" width="40" height="40" rx="2"/>
+				<rect class="t d8" x="287.8" y="96.3" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="0.6" y="144.8" width="40" height="40" rx="2"/>
+				<rect class="t t-acc d4" x="47.0" y="142.8" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="97.2" y="144.4" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="143.2" y="145.4" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="192.3" y="143.4" width="40" height="40" rx="2"/>
+				<rect class="t t-faded d8" x="240.8" y="142.6" width="40" height="40" rx="2"/>
+				<rect class="t d9" x="286.8" y="145.0" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="0.4" y="191.8" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="49.4" y="192.6" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="95.4" y="191.0" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="142.6" y="193.2" width="40" height="40" rx="2"/>
+				<rect class="t d8" x="193.0" y="191.2" width="40" height="40" rx="2"/>
+				<rect class="t d9" x="239.8" y="192.3" width="40" height="40" rx="2"/>
+				<rect class="t d10" x="288.6" y="192.8" width="40" height="40" rx="2"/>
+			</svg>
+			<figcaption class="legend">
+				<span><i class="sw sw-acc" aria-hidden="true"></i>confirmed</span>
+				<span><i class="sw sw-faded" aria-hidden="true"></i>review due</span>
+				<span><i class="sw sw-gap" aria-hidden="true"></i>not visible to certain AI systems</span>
+			</figcaption>
+		</figure>
+	</section>
+
+	<!-- Why -->
+	<section class="block" aria-labelledby="why">
+		<h2 class="label" id="why">Why</h2>
+		<div class="body">
+			<p class="statement">It takes AI to make knowledge maintenance unavoidable – and affordable.</p>
+			<p class="prose">
+				Company knowledge ages – often all by itself. Thanks to our tacit knowledge, we humans have always coped well with contradictions, inaccuracies and outdated data. Invalid knowledge is annoying, but not a real problem.<br><br>
+				As soon as AI agents work with it, however, it becomes a risk. That is why taflux doesn’t simply deliver whatever is written somewhere, but what applies today – with a date, a level of bindingness and a clear statement of who stands behind it.<br><br>
+				AI prepares, but people decide. AI makes maintaining information affordable – but it doesn’t make us redundant.
+			</p>
+		</div>
+	</section>
+
+	<!-- Goal -->
+	<section class="block" aria-labelledby="goal">
+		<h2 class="label" id="goal">The goal</h2>
+		<div class="body">
+			<p class="prose">The same question, put to the AI twice.</p>
+			<div class="compare">
+				<div>
+					<h3>From the archive</h3>
+					<p>Forty hits. Nobody knows how old they are – or whether any of them still applies.</p>
+				</div>
+				<div>
+					<h3>From taflux</h3>
+					<p>
+						One answer with a date, a level of bindingness and a named person who stands behind it.
+						Beneath it, a note that three knowledge blocks are deliberately missing because they
+						must not leave the building.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Principles -->
+	<section class="block" aria-labelledby="principles">
+		<h2 class="label" id="principles">Principles</h2>
+		<ul class="body cells cells-2">
+			<li><h3>Staying current takes decisions</h3><p>Knowledge goes out of date even when nobody is working on it. That is why it needs confirming (periodically and whenever contradictions arise), and new knowledge puts the older knowledge it affects up for review. AI detects and suggests – people decide.</p></li>
+			<li><h3>Validity and authority stay with people</h3><p>Whether something applies is always confirmed by a person, and every confirmation is logged. AI prepares what applies – but the decision stays with people (human in the loop).</p></li>
+			<li><h3>Knowledge with edges</h3><p>Knowledge blocks don’t exist in isolation: they are linked to one another by logical relations such as “superseded by” or “exception to”. AI suggests such links, which people review and approve. That way, every change shows what else ought to be reviewed.</p></li>
+			<li><h3>Visible gaps</h3><p>If confidential, unreviewed or outdated data is missing, the answer makes that gap visible instead of hiding it or filling it with guesswork.</p></li>
+			<li><h3>Protection through absence</h3><p>Whatever an AI system is not allowed to see simply does not exist in its search index. The company policies held in taflux determine in advance, for each system, which data is indexed. Because unapproved knowledge is physically absent from the index, sensitive data is protected against unwanted leakage even if a system is breached.</p></li>
+			<li><h3>Version history creates traceability</h3><p>Existing documents stay where they are. taflux doesn’t replace your cloud storage; it keeps a record alongside it of what currently applies.</p></li>
+		</ul>
+	</section>
+
+	<!-- Dimensions -->
+	<section class="block" aria-labelledby="dimensions">
+		<h2 class="label" id="dimensions">Six dimensions</h2>
+		<div class="body">
+			<p class="prose">
+				Every knowledge block carries its own state – across six dimensions that are set
+				independently of one another. The same mosaic therefore looks quite different
+				depending on the dimension. Choose a dimension:
+			</p>
+			<div class="lens" data-lens>
+				<div class="lens-tabs" role="tablist" aria-label="Choose a dimension" hidden>
+					<button type="button" role="tab" id="tab-validity" aria-controls="lens-validity" aria-selected="true">Validity</button>
+					<button type="button" role="tab" id="tab-trust" aria-controls="lens-trust" aria-selected="false" tabindex="-1">Trust level</button>
+					<button type="button" role="tab" id="tab-bindingness" aria-controls="lens-bindingness" aria-selected="false" tabindex="-1">Bindingness</button>
+					<button type="button" role="tab" id="tab-confidentiality" aria-controls="lens-confidentiality" aria-selected="false" tabindex="-1">Confidentiality</button>
+					<button type="button" role="tab" id="tab-retention" aria-controls="lens-retention" aria-selected="false" tabindex="-1">Retention purpose</button>
+					<button type="button" role="tab" id="tab-autonomy" aria-controls="lens-autonomy" aria-selected="false" tabindex="-1">Autonomy level</button>
+				</div>
+				<div class="lens-stage">
+					<figure class="lens-figure">
+						<svg class="lens-mosaic" viewBox="-3 -3 286 190" aria-hidden="true">
+							<g class="lt d0" data-s="s"><rect class="o" x="1.6" y="-0.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="0.8" y="-1.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d1" data-s="s"><rect class="o" x="47.5" y="1.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="46.8" y="1.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d2" data-s="s"><rect class="o" x="97.2" y="0.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="96.4" y="-0.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="f"><rect class="o" x="146.2" y="1.4" width="38.5" height="38.5" rx="2"/><rect class="f" x="145.4" y="0.6" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="c"><rect class="o" x="192.2" y="-0.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="191.4" y="-1.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="s"><rect class="o" x="239.3" y="1.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="238.6" y="1.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d1" data-s="s"><rect class="o" x="1.8" y="48.0" width="38.5" height="38.5" rx="2"/><rect class="f" x="1.0" y="47.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d2" data-s="s"><rect class="o" x="48.5" y="49.0" width="38.5" height="38.5" rx="2"/><rect class="f" x="47.8" y="48.3" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="s"><rect class="o" x="97.3" y="49.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="96.6" y="48.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="s"><rect class="o" x="143.8" y="47.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="143.0" y="46.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="f"><rect class="o" x="193.9" y="49.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="193.2" y="48.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d6" data-s="c"><rect class="o" x="239.9" y="50.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="239.2" y="49.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d2" data-s="s"><rect class="o" x="1.1" y="96.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="0.3" y="95.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="s"><rect class="o" x="49.5" y="95.3" width="38.5" height="38.5" rx="2"/><rect class="f" x="48.8" y="94.6" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="s"><rect class="o" x="95.5" y="97.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="94.8" y="97.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="s"><rect class="o" x="145.2" y="96.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="144.4" y="95.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d6" data-s="s"><rect class="o" x="194.2" y="97.3" width="38.5" height="38.5" rx="2"/><rect class="f" x="193.4" y="96.6" width="40" height="40" rx="2"/></g>
+							<g class="lt d7" data-s="f"><rect class="o" x="240.2" y="95.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="239.4" y="95.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="s"><rect class="o" x="-0.6" y="145.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="-1.4" y="145.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="s"><rect class="o" x="49.8" y="143.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="49.0" y="143.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="s"><rect class="o" x="96.5" y="145.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="95.8" y="144.3" width="40" height="40" rx="2"/></g>
+							<g class="lt d6" data-s="f"><rect class="o" x="145.3" y="145.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="144.6" y="144.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d7" data-s="s"><rect class="o" x="191.8" y="143.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="191.0" y="142.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d8" data-s="s"><rect class="o" x="241.9" y="145.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="241.2" y="144.4" width="40" height="40" rx="2"/></g>
+						</svg>
+					</figure>
+					<div class="lens-panels">
+						<div class="lens-panel" role="tabpanel" id="lens-validity" aria-labelledby="tab-validity" data-states="sssfcsssssfcsssssfsssfss">
+							<h3>Validity</h3>
+							<p class="lens-def">Does this still apply, or has it been superseded – and if so, by what?</p>
+							<p class="lens-story">In March the new expenses policy comes out. The old version isn’t deleted; it fades – and points to the new one that replaces it. Anyone asking about expenses gets the new version. The old one remains traceable.</p>
+							<ul class="lens-legend"><li><i class="sw sw-s" aria-hidden="true"></i>applies<span class="n">18</span></li><li><i class="sw sw-c" aria-hidden="true"></i>new version, replaces an old one<span class="n">2</span></li><li><i class="sw sw-f" aria-hidden="true"></i>superseded<span class="n">4</span></li></ul>
+						</div>
+						<div class="lens-panel" role="tabpanel" id="lens-trust" aria-labelledby="tab-trust" data-states="ccocfccfccococcfcccocoof" data-hidden>
+							<h3>Trust level</h3>
+							<p class="lens-def">Has a person confirmed exactly this text? taflux derives this from the confirmations. If the text changes, it loses its confirmation.</p>
+							<p class="lens-story">Lea from Accounts confirms the section on hotel costs – it lights up. Whatever the AI captured yesterday stays an outline until someone takes a look. And where a confirmation has grown too old, it fades again: the review is due.</p>
+							<ul class="lens-legend"><li><i class="sw sw-c" aria-hidden="true"></i>confirmed<span class="n">14</span></li><li><i class="sw sw-o" aria-hidden="true"></i>newly captured, unreviewed<span class="n">6</span></li><li><i class="sw sw-f" aria-hidden="true"></i>review due<span class="n">4</span></li></ul>
+						</div>
+						<div class="lens-panel" role="tabpanel" id="lens-bindingness" aria-labelledby="tab-bindingness" data-states="smosmmosmsommsomsmosmsoo" data-hidden>
+							<h3>Bindingness</h3>
+							<p class="lens-def">Is it a binding requirement, a recommendation or information? This determines the ranking and the tone of the answer.</p>
+							<p class="lens-story">The cap on hotel costs is a requirement, the tip about a cheap train connection a recommendation, the list of partner hotels information. The AI answers accordingly: a requirement comes across as a rule, not as well-meant advice.</p>
+							<ul class="lens-legend"><li><i class="sw sw-s" aria-hidden="true"></i>requirement<span class="n">8</span></li><li><i class="sw sw-m" aria-hidden="true"></i>recommendation<span class="n">9</span></li><li><i class="sw sw-o" aria-hidden="true"></i>information<span class="n">7</span></li></ul>
+						</div>
+						<div class="lens-panel" role="tabpanel" id="lens-confidentiality" aria-labelledby="tab-confidentiality" data-states="sssgssgsssgssssgsssgssgs" data-hidden>
+							<h3>Confidentiality</h3>
+							<p class="lens-def">Who may see this, and which AI system may work with it? Each trust tier has its own search index.</p>
+							<p class="lens-story">Marco asks a cloud assistant about the project costs. It may never see the cost calculations – they simply aren’t in its search index. So the answer points out that six knowledge blocks are deliberately missing. For the complete answer, Marco switches to the local model.</p>
+							<ul class="lens-legend"><li><i class="sw sw-s" aria-hidden="true"></i>visible to the cloud AI<span class="n">18</span></li><li><i class="sw sw-g" aria-hidden="true"></i>stays in-house, missing<span class="n">6</span></li></ul>
+						</div>
+						<div class="lens-panel" role="tabpanel" id="lens-retention" aria-labelledby="tab-retention" data-states="fffcffffffsffffffcfffoff" data-hidden>
+							<h3>Retention purpose</h3>
+							<p class="lens-def">Why keep something that no longer applies? As a lesson, as part of history or as a reference.</p>
+							<p class="lens-story">The four superseded tiles from “Validity” haven’t disappeared. The failed migration of 2021 stays as a lesson, the old organisation chart as history, the former standard as a reference. The AI presents none of them as a rule in force.</p>
+							<ul class="lens-legend"><li><i class="sw sw-f" aria-hidden="true"></i>applies, needs no purpose<span class="n">20</span></li><li><i class="sw sw-c" aria-hidden="true"></i>lesson<span class="n">2</span></li><li><i class="sw sw-s" aria-hidden="true"></i>history<span class="n">1</span></li><li><i class="sw sw-o" aria-hidden="true"></i>reference<span class="n">1</span></li></ul>
+						</div>
+						<div class="lens-panel" role="tabpanel" id="lens-autonomy" aria-labelledby="tab-autonomy" data-states="omsoommsomsoomsmomsommos" data-hidden>
+							<h3>Autonomy level</h3>
+							<p class="lens-def">May the AI change the stored knowledge or its metadata? Only on request, within a defined scope or on its own.</p>
+							<p class="lens-story">The AI fixes a typo in the style guide itself, adjusts wording in the handbook within the agreed scope and only makes suggestions for the expenses policy. How much freedom it gets is decided by a person – and it can never confirm anything.</p>
+							<ul class="lens-legend"><li><i class="sw sw-s" aria-hidden="true"></i>changes on its own<span class="n">6</span></li><li><i class="sw sw-m" aria-hidden="true"></i>changes within scope<span class="n">9</span></li><li><i class="sw sw-o" aria-hidden="true"></i>may only suggest<span class="n">9</span></li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Format -->
+	<section class="block" aria-labelledby="format">
+		<h2 class="label" id="format">One file</h2>
+		<div class="body split">
+			<div>
+				<p class="statement statement-s">
+					AI models come and go; the knowledge stays. Switch providers and you simply take your
+					knowledge base with you.
+				</p>
+				<p class="prose">
+					Everything is stored as plain Markdown in Git, in the open Open Knowledge Format (OKF). What
+					taflux knows about a knowledge block sits in the file’s YAML header – one line per knowledge
+					block. Every change stays readable in the diff, and a simple <code>grep</code> finds it. On
+					export, nothing is translated; whatever must not leave is simply left out.
+				</p>
+			</div>
+			<pre class="code" aria-label="Example of a YAML header"><code><span class="k">type:</span> guideline
+<span class="k">title:</span> Expenses policy
+<span class="k">status:</span> draft
+<span class="k">taflux:</span>
+  <span class="k">profile:</span> taflux-okf/1
+  <span class="k">sections:</span>
+    - { id: sec-b1e8d4, validity: current,
+        tier: binding, classification: internal, … }
+    - { id: sec-c2f9a1, validity: superseded,
+        superseded_by: sec-d4e117, … }</code></pre>
+		</div>
+	</section>
+
+	<!-- Components -->
+	<section class="block" aria-labelledby="components">
+		<h2 class="label" id="components">What taflux is made of</h2>
+		<ul class="body cells cells-2">
+			<li><h3>Format</h3><p class="sub">Open Knowledge Format (OKF) v0.2</p><p>Every Markdown file is a complete, valid OKF file – no sidecar file and no conversion on export. Whatever OKF doesn’t cover, taflux adds under its own “taflux” key.</p></li>
+			<li><h3>Editor</h3><p class="sub">Extended OKF editor built on Milkdown</p><p>Markdown for the text, the six dimensions as controls, plus a review view and three-way merge – so anyone can contribute, even without Git. In German, French, Italian and English.</p></li>
+			<li><h3>MCP server</h3><p class="sub">Model Context Protocol</p><p>Connects taflux to any AI system that speaks MCP. Searches by keyword and by meaning at the same time, knows the links between knowledge blocks and keeps a separate search index for each trust tier.</p></li>
+			<li><h3>Team</h3><p class="sub">Together, with clear responsibilities</p><p>Anyone on the team who files or confirms something vouches for it by name – and taflux remembers who stood behind what, and when. Who may read and change what can be narrowed down: to the project team, a department or the executive board.</p></li>
+		</ul>
+	</section>
+
+	<!-- Status -->
+	<section class="block" aria-labelledby="status">
+		<h2 class="label" id="status">Status</h2>
+		<ol class="body timeline">
+			<li class="is-done">
+				<span class="when">Done</span>
+				<ul>
+					<li>Foundation, six dimensions, search and editor</li>
+					<li>Confidentiality routing: one search index per trust tier</li>
+					<li>OKF-based: import, derived trust level, bundle export</li>
+					<li>Interface in four languages (DE, FR, IT, EN)</li>
+				</ul>
+			</li>
+			<li class="is-now">
+				<span class="when">November 2026</span>
+				<ul>
+					<li>Bundles with audience, addressing and inbox</li>
+					<li>Shared operation for teams</li>
+					<li>taflux demo: a complete demo repository with a single command</li>
+					<li>OKF-native: everything in one file, derived trust level, export as a filter</li>
+				</ul>
+			</li>
+			<li class="is-release">
+				<span class="when">30 November 2026</span>
+				<p data-release-row>Release as open source on GitHub at <a href="https://github.com/taflux-org" rel="noopener">github.com/taflux-org</a>.</p>
+			</li>
+			<li>
+				<span class="when">After that</span>
+				<dl class="roadmap">
+					<div><dt>Machine maintenance</dt><dd>The AI prepares due reviews and takes care of small changes – as a suggestion or directly, depending on how much freedom it has been granted beforehand. But it cannot confirm anything: whatever it changes only applies again once a person has signed it off.</dd></div>
+					<div><dt>Evidence and measurement</dt><dd>Audit reports, tamper-proof receipts and a reproducible benchmark for search.</dd></div>
+					<div><dt>Onboarding existing content</dt><dd>Take over existing documents and break them down into knowledge blocks, with safeguards for personal data.</dd></div>
+					<div><dt>Fact triples</dt><dd>Contradictions are no longer merely suspected but detected by rules – including when merging changes.</dd></div>
+					<div><dt>Source Watcher</dt><dd>When a source document changes, taflux puts the affected knowledge blocks up for review.</dd></div>
+				</dl>
+			</li>
+		</ol>
+	</section>
+
+	<!-- Get involved -->
+	<section class="block" id="get-involved" aria-labelledby="get-involved-title">
+		<h2 class="label">Get involved</h2>
+		<div class="body">
+			<p class="statement" id="get-involved-title">Curious, critical or keen to get involved?</p>
+			<p class="prose">
+				If you find yourself thinking “That’s the wrong way to solve it!” in three places – those are exactly the three places I want to hear about. Absolutely!
+				<br><br>
+				Whether it’s a spontaneous idea, a concrete use case, a critical question, a suggestion for improvement or simply a taste for some sparring: write to me! A brief thought, a spur-of-the-moment impulse or a critical message are all very welcome. You don’t need to bring a finished concept or a polished solution.
+				<br><br>
+				I’m curious to see what comes of it. Perhaps it stays an open-source project that keeps getting better together. Or perhaps it grows into something much bigger:
+				<br><br>
+				A start-up&nbsp;– <span class="nowrap">TOGETHER WITH YOU!</span>
+			</p>
+			<p class="actions">
+				<a class="btn" href="#get-involved" data-mail="taflux">Send a message</a>
+				<a class="btn btn-quiet" href="https://github.com/taflux-org" rel="noopener">View the GitHub organisation</a>
+			</p>
+		</div>
+	</section>
+</main>
+
+<footer class="foot wrap">
+	<p>taflux is an open-source project by G. Welsche, released under the Apache License 2.0.</p>
+	<p><a href="impressum.html" hreflang="de">Legal notice and privacy (in German)</a></p>
+</footer>
+</body>
+</html>

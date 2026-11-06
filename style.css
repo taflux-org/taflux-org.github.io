@@ -1,6 +1,4 @@
-/* taflux – Landingpage
-   Farben nach Vision-Dokument: Steinbeige, Anthrazit, Terrakotta. Kein KI-Blau.
-   Raster: Label links (3/12), Inhalt rechts (9/12). Linien nur zwischen den Abschnitten. */
+/* taflux – Landingpage */
 
 @font-face {
 	font-family: 'Newsreader';
@@ -126,6 +124,10 @@ code {
 	width: min(100% - 2 * var(--gutter), var(--max));
 	margin-inline: auto;
 }
+.nowrap {
+	white-space: nowrap;
+	text-wrap: nowrap;
+}
 .skip {
 	position: absolute;
 	left: var(--gutter);
@@ -200,11 +202,43 @@ a.badge:hover {
 	background: var(--clay);
 	border-radius: 1px;
 }
+
+/* Sprachwahl: zwei Felder, das aktive gefüllt – wie ein gesetzter Stein */
+.lang {
+	display: inline-flex;
+	flex: none;
+	border: 1px solid var(--rule);
+	border-radius: 2px;
+}
+.lang a {
+	display: grid;
+	place-items: center;
+	min-width: 2.4rem;
+	min-height: 2.4rem;
+	padding: 0 0.55rem;
+	color: var(--muted);
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	line-height: 1;
+	text-decoration: none;
+}
+.lang a + a {
+	border-left: 1px solid var(--rule);
+}
+.lang a:hover {
+	color: var(--ink);
+}
+.lang a[aria-current] {
+	background: var(--ink);
+	color: var(--stone);
+}
 .theme {
 	display: grid;
 	place-items: center;
 	width: 2.4rem;
 	height: 2.4rem;
+	flex: none;
 	padding: 0;
 	border: 1px solid transparent;
 	border-radius: 2px;
@@ -381,6 +415,20 @@ a.badge:hover {
 .sw-gap {
 	border: 1px dashed var(--muted);
 }
+
+/* Verzögerungsstufen der Mosaiksteine (früher inline als style="--i:n").
+   Die Stufe folgt der Diagonale: Die Steine setzen sich von links oben nach rechts unten. */
+.d0 { --i: 0; }
+.d1 { --i: 1; }
+.d2 { --i: 2; }
+.d3 { --i: 3; }
+.d4 { --i: 4; }
+.d5 { --i: 5; }
+.d6 { --i: 6; }
+.d7 { --i: 7; }
+.d8 { --i: 8; }
+.d9 { --i: 9; }
+.d10 { --i: 10; }
 
 /* Ein einziger Moment: die Steine setzen sich beim Laden, das fehlende bleibt leer. */
 @media (prefers-reduced-motion: no-preference) {
@@ -617,6 +665,7 @@ h3 + p {
 .lens-legend {
 	display: grid;
 	gap: 0.35rem;
+	max-width: 24rem;
 	margin-top: var(--space-s);
 	padding: 0;
 	list-style: none;
@@ -634,9 +683,6 @@ h3 + p {
 	color: var(--ink);
 	font-variant-numeric: tabular-nums;
 	text-align: right;
-}
-.lens-legend {
-	max-width: 24rem;
 }
 .sw-s {
 	background: color-mix(in srgb, var(--ink) 88%, transparent);
@@ -669,7 +715,7 @@ h3 + p {
 	.lt .f,
 	.lt .o {
 		transition: fill 0.5s ease, fill-opacity 0.5s ease, stroke-opacity 0.5s ease, opacity 0.5s ease,
-			transform 0.55s cubic-bezier(0.3, 0.7, 0.2, 1.2);
+		transform 0.55s cubic-bezier(0.3, 0.7, 0.2, 1.2);
 		transition-delay: calc(var(--i, 0) * 40ms);
 	}
 	.lens.is-ready .lens-panel {
@@ -856,6 +902,7 @@ h3 + p {
 @media (max-width: 480px) {
 	.bar {
 		flex-wrap: wrap;
+		gap: 0.75rem;
 	}
 	.badge {
 		order: 3;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de-CH" xmlns="http://www.w3.org/1999/html">
+<html lang="de-CH">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,209 +9,213 @@
 	<meta name="theme-color" content="#f1eee8" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="#1f2123" media="(prefers-color-scheme: dark)">
 	<meta property="og:type" content="website">
+	<meta property="og:locale" content="de_CH">
+	<meta property="og:locale:alternate" content="en_GB">
 	<meta property="og:title" content="taflux">
 	<meta property="og:description" content="Eine Wissensbasis für Mensch und KI, in der jeder Wissensbaustein zeigt, ob er noch gilt und wer dafür einsteht.">
+	<!-- Sprachfassungen: main.js liest diese Links für die automatische Sprachwahl, daher vor dem Skript. -->
+	<link rel="alternate" hreflang="de" href="./">
+	<link rel="alternate" hreflang="en" href="index_en.html">
+	<link rel="alternate" hreflang="x-default" href="./">
 	<link rel="icon" href="favicon.svg" type="image/svg+xml">
 	<link rel="preload" href="fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Bewusst ohne defer: Sprache und Theme stehen fest, bevor gezeichnet wird. -->
+	<script src="main.js"></script>
 	<link rel="stylesheet" href="style.css">
-	<script>
-		// Theme vor dem ersten Zeichnen setzen, damit nichts aufblitzt.
-		try {
-			var t = localStorage.getItem('taflux-theme');
-			if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-		} catch (e) {}
-	</script>
-	<script src="main.js" defer></script>
 </head>
 <body>
-	<a class="skip" href="#inhalt">Zum Inhalt</a>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
 
-	<header class="bar wrap">
-		<a class="brand" href="./" aria-label="taflux – Startseite">
-			<svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true">
-				<rect x="0" y="0" width="8" height="8" rx="1"/><rect x="11" y="0" width="8" height="8" rx="1"/><rect x="22" y="0" width="8" height="8" rx="1"/>
-				<rect x="0" y="11" width="8" height="8" rx="1"/><rect class="gap" x="11.5" y="11.5" width="7" height="7" rx="1"/><rect x="22" y="11" width="8" height="8" rx="1"/>
-				<rect x="0" y="22" width="8" height="8" rx="1" class="acc"/><rect x="11" y="22" width="8" height="8" rx="1"/><rect x="22" y="22" width="8" height="8" rx="1" class="faded"/>
-			</svg>
-			<span>taflux</span>
-		</a>
-		<p class="badge" data-release-badge>
-			<span class="badge-tile" aria-hidden="true"></span>
-			<span data-release-text>Veröffentlichung am 30.&nbsp;November&nbsp;2026</span>
-		</p>
-		<button class="theme" type="button" data-theme-toggle aria-label="Hell- oder Dunkelmodus umschalten">
-			<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>
-		</button>
-	</header>
+<header class="bar wrap">
+	<a class="brand" href="./" aria-label="taflux – Startseite">
+		<svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true">
+			<rect x="0" y="0" width="8" height="8" rx="1"/><rect x="11" y="0" width="8" height="8" rx="1"/><rect x="22" y="0" width="8" height="8" rx="1"/>
+			<rect x="0" y="11" width="8" height="8" rx="1"/><rect class="gap" x="11.5" y="11.5" width="7" height="7" rx="1"/><rect x="22" y="11" width="8" height="8" rx="1"/>
+			<rect x="0" y="22" width="8" height="8" rx="1" class="acc"/><rect x="11" y="22" width="8" height="8" rx="1"/><rect x="22" y="22" width="8" height="8" rx="1" class="faded"/>
+		</svg>
+		<span>taflux</span>
+	</a>
+	<p class="badge" data-release-badge>
+		<span class="badge-tile" aria-hidden="true"></span>
+		<span data-release-text>Veröffentlichung am 30.&nbsp;November&nbsp;2026</span>
+	</p>
+	<nav class="lang" aria-label="Sprache wählen">
+		<a href="./" hreflang="de" lang="de" data-lang="de" aria-current="page" aria-label="Deutsch">DE</a>
+		<a href="index_en.html" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+	</nav>
+	<button class="theme" type="button" data-theme-toggle aria-label="Hell- oder Dunkelmodus umschalten">
+		<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>
+	</button>
+</header>
 
-	<main id="inhalt" class="wrap">
-		<!-- Kopf -->
-		<section class="hero" aria-labelledby="titel">
-			<dl class="facts">
-				<div><dt>Projekt</dt><dd>Open Source</dd></div>
-				<div><dt>Lizenz</dt><dd>Apache&nbsp;2.0</dd></div>
-				<div><dt>Veröffentlichung</dt><dd data-release-fact>30.&nbsp;November&nbsp;2026</dd></div>
-				<div><dt>Oberfläche</dt><dd>Deutsch, Französisch, Italienisch, Englisch</dd></div>
-			</dl>
+<main id="inhalt" class="wrap">
+	<!-- Kopf -->
+	<section class="hero" aria-labelledby="titel">
+		<dl class="facts">
+			<div><dt>Projekt</dt><dd>Open Source</dd></div>
+			<div><dt>Lizenz</dt><dd>Apache&nbsp;2.0</dd></div>
+			<div><dt>Veröffentlichung</dt><dd data-release-fact>30.&nbsp;November&nbsp;2026</dd></div>
+			<div><dt>Oberfläche</dt><dd>Deutsch, Französisch, Italienisch, Englisch</dd></div>
+		</dl>
 
-			<div class="hero-text">
-				<h1 id="titel">taflux</h1>
-				<p class="lead">
-					Eine Wissensbasis für Mensch und KI, in der jeder Wissensbaustein zeigt, ob er noch gilt und wer
-					dafür einsteht. Die KI hilft – das letzte Wort haben aber immer noch wir.
-				</p>
-				<p class="actions">
-					<a class="btn btn-locked" data-release-cta aria-disabled="true">
-						taflux auf GitHub
-						<span class="btn-flag" data-release-flag>ab 30.11.2026</span>
-					</a>
-					<a class="btn btn-quiet" href="#mitmachen">Mitmachen</a>
-				</p>
-			</div>
+		<div class="hero-text">
+			<h1 id="titel">taflux</h1>
+			<p class="lead">
+				Eine Wissensbasis für Mensch und KI, in der jeder Wissensbaustein zeigt, ob er noch gilt und wer
+				dafür einsteht. Die KI hilft – das letzte Wort haben aber immer noch wir.
+			</p>
+			<p class="actions">
+				<a class="btn btn-locked" data-release-cta aria-disabled="true">
+					taflux auf GitHub
+					<span class="btn-flag" data-release-flag>ab 30.11.2026</span>
+				</a>
+				<a class="btn btn-quiet" href="#mitmachen">Mitmachen</a>
+			</p>
+		</div>
 
-			<figure class="hero-mosaic">
-				<svg class="mosaic" viewBox="-2 -2 332 236" role="img" aria-label="Mosaik aus Wissensbausteinen: einer ist bestätigt, einer ist zur Prüfung fällig, einer fehlt, weil diese KI ihn nicht sehen darf.">
-				<rect class="t" style="--i:0" x="0.8" y="-1.4" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:1" x="46.8" y="1.0" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:2" x="96.4" y="-0.2" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:3" x="145.4" y="0.6" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:4" x="191.4" y="-1.0" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:5" x="238.6" y="1.2" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:6" x="289.0" y="-0.8" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:1" x="-0.2" y="48.3" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:2" x="48.6" y="48.8" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:3" x="95.0" y="46.8" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:4" x="145.2" y="48.4" width="40" height="40" rx="2"/>
+		<figure class="hero-mosaic">
+			<svg class="mosaic" viewBox="-2 -2 332 236" role="img" aria-label="Mosaik aus Wissensbausteinen: einer ist bestätigt, einer ist zur Prüfung fällig, einer fehlt, weil diese KI ihn nicht sehen darf.">
+				<rect class="t d0" x="0.8" y="-1.4" width="40" height="40" rx="2"/>
+				<rect class="t d1" x="46.8" y="1.0" width="40" height="40" rx="2"/>
+				<rect class="t d2" x="96.4" y="-0.2" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="145.4" y="0.6" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="191.4" y="-1.0" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="238.6" y="1.2" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="289.0" y="-0.8" width="40" height="40" rx="2"/>
+				<rect class="t d1" x="-0.2" y="48.3" width="40" height="40" rx="2"/>
+				<rect class="t d2" x="48.6" y="48.8" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="95.0" y="46.8" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="145.2" y="48.4" width="40" height="40" rx="2"/>
 				<rect class="t-gap" x="191.9" y="50.1" width="38.5" height="38.5" rx="2"/>
-				<rect class="t" style="--i:6" x="240.3" y="47.4" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:7" x="288.8" y="46.6" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:2" x="-1.2" y="97.0" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:3" x="48.4" y="95.8" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:4" x="97.4" y="96.6" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:5" x="143.4" y="95.0" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:6" x="190.6" y="97.2" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:7" x="241.0" y="95.2" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:8" x="287.8" y="96.3" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:3" x="0.6" y="144.8" width="40" height="40" rx="2"/>
-				<rect class="t t-acc" style="--i:4" x="47.0" y="142.8" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:5" x="97.2" y="144.4" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:6" x="143.2" y="145.4" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:7" x="192.3" y="143.4" width="40" height="40" rx="2"/>
-				<rect class="t t-faded" style="--i:8" x="240.8" y="142.6" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:9" x="286.8" y="145.0" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:4" x="0.4" y="191.8" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:5" x="49.4" y="192.6" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:6" x="95.4" y="191.0" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:7" x="142.6" y="193.2" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:8" x="193.0" y="191.2" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:9" x="239.8" y="192.3" width="40" height="40" rx="2"/>
-				<rect class="t" style="--i:10" x="288.6" y="192.8" width="40" height="40" rx="2"/>
-				</svg>
-				<figcaption class="legend">
-					<span><i class="sw sw-acc" aria-hidden="true"></i>bestätigt</span>
-					<span><i class="sw sw-faded" aria-hidden="true"></i>Prüfung fällig</span>
-					<span><i class="sw sw-gap" aria-hidden="true"></i>für bestimmte KI-Systeme nicht sichtbar</span>
-				</figcaption>
-			</figure>
-		</section>
+				<rect class="t d6" x="240.3" y="47.4" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="288.8" y="46.6" width="40" height="40" rx="2"/>
+				<rect class="t d2" x="-1.2" y="97.0" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="48.4" y="95.8" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="97.4" y="96.6" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="143.4" y="95.0" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="190.6" y="97.2" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="241.0" y="95.2" width="40" height="40" rx="2"/>
+				<rect class="t d8" x="287.8" y="96.3" width="40" height="40" rx="2"/>
+				<rect class="t d3" x="0.6" y="144.8" width="40" height="40" rx="2"/>
+				<rect class="t t-acc d4" x="47.0" y="142.8" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="97.2" y="144.4" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="143.2" y="145.4" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="192.3" y="143.4" width="40" height="40" rx="2"/>
+				<rect class="t t-faded d8" x="240.8" y="142.6" width="40" height="40" rx="2"/>
+				<rect class="t d9" x="286.8" y="145.0" width="40" height="40" rx="2"/>
+				<rect class="t d4" x="0.4" y="191.8" width="40" height="40" rx="2"/>
+				<rect class="t d5" x="49.4" y="192.6" width="40" height="40" rx="2"/>
+				<rect class="t d6" x="95.4" y="191.0" width="40" height="40" rx="2"/>
+				<rect class="t d7" x="142.6" y="193.2" width="40" height="40" rx="2"/>
+				<rect class="t d8" x="193.0" y="191.2" width="40" height="40" rx="2"/>
+				<rect class="t d9" x="239.8" y="192.3" width="40" height="40" rx="2"/>
+				<rect class="t d10" x="288.6" y="192.8" width="40" height="40" rx="2"/>
+			</svg>
+			<figcaption class="legend">
+				<span><i class="sw sw-acc" aria-hidden="true"></i>bestätigt</span>
+				<span><i class="sw sw-faded" aria-hidden="true"></i>Prüfung fällig</span>
+				<span><i class="sw sw-gap" aria-hidden="true"></i>für bestimmte KI-Systeme nicht sichtbar</span>
+			</figcaption>
+		</figure>
+	</section>
 
-		<!-- Warum -->
-		<section class="block" aria-labelledby="warum">
-			<h2 class="label" id="warum">Warum</h2>
-			<div class="body">
-				<p class="statement">Erst KI macht Wissenspflege unausweichlich – und bezahlbar.</p>
-				<p class="prose">
-					Firmenwissen altert – oft ganz von allein. Dank unseres impliziten Wissens kommen wir Menschen schon immer gut mit Widersprüchen, Ungenauigkeiten und veralteten Daten klar. Ungültiges Wissen ist zwar nervig, aber kein echtes Problem.<br><br>
-					Sobald jedoch KI-Agenten damit arbeiten, wird es zum Risiko. Deshalb liefert taflux nicht einfach das, was irgendwo steht, sondern das, was tagesaktuell gilt – mit Datum, Verbindlichkeit und einer klaren Aussage, wer dafür einsteht.<br><br>
-					Die KI bereitet vor, aber der Mensch entscheidet. KI macht die Pflege der Informationen bezahlbar – überflüssig macht sie uns aber nicht.
-				</p>
-			</div>
-		</section>
+	<!-- Warum -->
+	<section class="block" aria-labelledby="warum">
+		<h2 class="label" id="warum">Warum</h2>
+		<div class="body">
+			<p class="statement">Erst KI macht Wissenspflege unausweichlich – und bezahlbar.</p>
+			<p class="prose">
+				Firmenwissen altert – oft ganz von allein. Dank unseres impliziten Wissens kommen wir Menschen schon immer gut mit Widersprüchen, Ungenauigkeiten und veralteten Daten klar. Ungültiges Wissen ist zwar nervig, aber kein echtes Problem.<br><br>
+				Sobald jedoch KI-Agenten damit arbeiten, wird es zum Risiko. Deshalb liefert taflux nicht einfach das, was irgendwo steht, sondern das, was tagesaktuell gilt – mit Datum, Verbindlichkeit und einer klaren Aussage, wer dafür einsteht.<br><br>
+				Die KI bereitet vor, aber der Mensch entscheidet. KI macht die Pflege der Informationen bezahlbar – überflüssig macht sie uns aber nicht.
+			</p>
+		</div>
+	</section>
 
-		<!-- Ziel -->
-		<section class="block" aria-labelledby="ziel">
-			<h2 class="label" id="ziel">Das Ziel</h2>
-			<div class="body">
-				<p class="prose">Dieselbe Frage, zweimal an die KI gestellt.</p>
-				<div class="compare">
-					<div>
-						<h3>Aus dem Archiv</h3>
-						<p>Vierzig Treffer. Keiner weiss, wie alt sie sind – und ob überhaupt noch einer davon gilt.</p>
-					</div>
-					<div>
-						<h3>Aus taflux</h3>
-						<p>
-							Eine Antwort mit Datum, Verbindlichkeit und einem Verantwortlichen, der dafür einsteht.
-							Darunter steht der Hinweis,
-							dass drei Wissensbausteine bewusst fehlen, weil sie das Haus nicht verlassen dürfen.
-						</p>
-					</div>
+	<!-- Ziel -->
+	<section class="block" aria-labelledby="ziel">
+		<h2 class="label" id="ziel">Das Ziel</h2>
+		<div class="body">
+			<p class="prose">Dieselbe Frage, zweimal an die KI gestellt.</p>
+			<div class="compare">
+				<div>
+					<h3>Aus dem Archiv</h3>
+					<p>Vierzig Treffer. Keiner weiss, wie alt sie sind – und ob überhaupt noch einer davon gilt.</p>
+				</div>
+				<div>
+					<h3>Aus taflux</h3>
+					<p>
+						Eine Antwort mit Datum, Verbindlichkeit und einem Verantwortlichen, der dafür einsteht.
+						Darunter steht der Hinweis,
+						dass drei Wissensbausteine bewusst fehlen, weil sie das Haus nicht verlassen dürfen.
+					</p>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Grundsätze -->
-		<section class="block" aria-labelledby="grundsaetze">
-			<h2 class="label" id="grundsaetze">Grundsätze</h2>
-			<ul class="body cells cells-2">
-				<li><h3>Aktualität braucht Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb benötigt es Bestätigungen (periodisch und bei Widersprüchen), und neues Wissen legt betroffenes altes zur Prüfung vor. KI stellt fest und schlägt vor - Menschen entscheiden.</p></li>
-				<li><h3>Gültigkeit und Geltung bleiben beim Menschen</h3><p>Ob etwas gilt, bestätigt immer ein Mensch, und jede Bestätigung wird protokolliert. Was gilt – das bereitet die KI vor – aber die Entscheidung bleibt beim Menschen (human in the loop).</p></li>
-				<li><h3>Wissen mit Kanten</h3><p>Wissensbausteine existieren nicht isoliert: Sie sind durch logische Verknüpfungen – wie „Ersetzt durch“ oder „Ausnahme von“ – miteinander vernetzt. Die KI schlägt solche Verknüpfungen vor, die vom Menschen geprüft und freigegeben werden. So wird bei jeder Änderung sichtbar, was sonst alles geprüft werden sollte.</p></li>
-				<li><h3>Sichtbare Lücken</h3><p>Fehlen vertrauliche, ungeprüfte oder veraltete Daten, macht die Antwort diese Lücke sichtbar, statt sie zu verschweigen oder mit Vermutungen zu füllen.</p></li>
-				<li><h3>Schutz durch Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, existiert in ihrem Suchbestand überhaupt nicht. Die in taflux hinterlegten Unternehmens-Policies bestimmen im Vorfeld für jedes System, welche Daten indiziert werden. Da nicht freigegebenes Wissen im Index physisch abwesend ist, sind sensible Daten selbst bei einem Systemeinbruch vor ungewolltem Abfluss geschützt.</p></li>
-				<li><h3>Versionshistorie schafft Nachvollziehbarkeit</h3><p>Bestehende Dokumente bleiben, wo sie sind. taflux ersetzt keine Cloud-Ablage, sondern hält daneben fest, was davon aktuell gilt.</p></li>
-			</ul>
-		</section>
+	<!-- Grundsätze -->
+	<section class="block" aria-labelledby="grundsaetze">
+		<h2 class="label" id="grundsaetze">Grundsätze</h2>
+		<ul class="body cells cells-2">
+			<li><h3>Aktualität braucht Entscheidung</h3><p>Wissen veraltet auch dann, wenn niemand daran arbeitet. Deshalb benötigt es Bestätigungen (periodisch und bei Widersprüchen), und neues Wissen legt betroffenes altes zur Prüfung vor. KI stellt fest und schlägt vor - Menschen entscheiden.</p></li>
+			<li><h3>Gültigkeit und Geltung bleiben beim Menschen</h3><p>Ob etwas gilt, bestätigt immer ein Mensch, und jede Bestätigung wird protokolliert. Was gilt – das bereitet die KI vor – aber die Entscheidung bleibt beim Menschen (human in the loop).</p></li>
+			<li><h3>Wissen mit Kanten</h3><p>Wissensbausteine existieren nicht isoliert: Sie sind durch logische Verknüpfungen – wie „Ersetzt durch“ oder „Ausnahme von“ – miteinander vernetzt. Die KI schlägt solche Verknüpfungen vor, die vom Menschen geprüft und freigegeben werden. So wird bei jeder Änderung sichtbar, was sonst alles geprüft werden sollte.</p></li>
+			<li><h3>Sichtbare Lücken</h3><p>Fehlen vertrauliche, ungeprüfte oder veraltete Daten, macht die Antwort diese Lücke sichtbar, statt sie zu verschweigen oder mit Vermutungen zu füllen.</p></li>
+			<li><h3>Schutz durch Abwesenheit</h3><p>Was ein KI-System nicht sehen darf, existiert in ihrem Suchbestand überhaupt nicht. Die in taflux hinterlegten Unternehmens-Policies bestimmen im Vorfeld für jedes System, welche Daten indiziert werden. Da nicht freigegebenes Wissen im Index physisch abwesend ist, sind sensible Daten selbst bei einem Systemeinbruch vor ungewolltem Abfluss geschützt.</p></li>
+			<li><h3>Versionshistorie schafft Nachvollziehbarkeit</h3><p>Bestehende Dokumente bleiben, wo sie sind. taflux ersetzt keine Cloud-Ablage, sondern hält daneben fest, was davon aktuell gilt.</p></li>
+		</ul>
+	</section>
 
-		<!-- Dimensionen -->
-		<section class="block" aria-labelledby="dimensionen">
-			<h2 class="label" id="dimensionen">Sechs Dimensionen</h2>
-			<div class="body">
-				<p class="prose">
-					Jeder Wissensbaustein trägt seinen eigenen Zustand – auf sechs Dimensionen, die 
-					unabhängig voneinander gesetzt werden. Dasselbe Mosaik sieht deshalb je nach 
-					Dimension ganz anders aus. Wähle eine Dimension:				
-				</p>
-				<div class="lens" data-lens>
-					<div class="lens-tabs" role="tablist" aria-label="Dimension wählen" hidden>
-						<button type="button" role="tab" id="tab-gueltigkeit" aria-controls="lens-gueltigkeit" aria-selected="true">Gültigkeit</button>
-						<button type="button" role="tab" id="tab-vertrauensgrad" aria-controls="lens-vertrauensgrad" aria-selected="false" tabindex="-1">Vertrauensgrad</button>
-						<button type="button" role="tab" id="tab-verbindlichkeit" aria-controls="lens-verbindlichkeit" aria-selected="false" tabindex="-1">Verbindlichkeit</button>
-						<button type="button" role="tab" id="tab-vertraulichkeit" aria-controls="lens-vertraulichkeit" aria-selected="false" tabindex="-1">Vertraulichkeit</button>
-						<button type="button" role="tab" id="tab-aufbewahrungszweck" aria-controls="lens-aufbewahrungszweck" aria-selected="false" tabindex="-1">Aufbewahrungszweck</button>
-						<button type="button" role="tab" id="tab-autonomiegrad" aria-controls="lens-autonomiegrad" aria-selected="false" tabindex="-1">Autonomiegrad</button>
-					</div>
-					<div class="lens-stage">
-						<figure class="lens-figure">
-							<svg class="lens-mosaic" viewBox="-3 -3 286 190" aria-hidden="true">
-							<g class="lt" data-s="s" style="--i:0"><rect class="o" x="1.6" y="-0.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="0.8" y="-1.4" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:1"><rect class="o" x="47.5" y="1.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="46.8" y="1.0" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:2"><rect class="o" x="97.2" y="0.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="96.4" y="-0.2" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="f" style="--i:3"><rect class="o" x="146.2" y="1.4" width="38.5" height="38.5" rx="2"/><rect class="f" x="145.4" y="0.6" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="c" style="--i:4"><rect class="o" x="192.2" y="-0.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="191.4" y="-1.0" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:5"><rect class="o" x="239.3" y="1.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="238.6" y="1.2" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:1"><rect class="o" x="1.8" y="48.0" width="38.5" height="38.5" rx="2"/><rect class="f" x="1.0" y="47.2" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:2"><rect class="o" x="48.5" y="49.0" width="38.5" height="38.5" rx="2"/><rect class="f" x="47.8" y="48.3" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:3"><rect class="o" x="97.3" y="49.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="96.6" y="48.8" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:4"><rect class="o" x="143.8" y="47.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="143.0" y="46.8" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="f" style="--i:5"><rect class="o" x="193.9" y="49.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="193.2" y="48.4" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="c" style="--i:6"><rect class="o" x="239.9" y="50.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="239.2" y="49.4" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:2"><rect class="o" x="1.1" y="96.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="0.3" y="95.4" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:3"><rect class="o" x="49.5" y="95.3" width="38.5" height="38.5" rx="2"/><rect class="f" x="48.8" y="94.6" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:4"><rect class="o" x="95.5" y="97.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="94.8" y="97.0" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:5"><rect class="o" x="145.2" y="96.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="144.4" y="95.8" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:6"><rect class="o" x="194.2" y="97.3" width="38.5" height="38.5" rx="2"/><rect class="f" x="193.4" y="96.6" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="f" style="--i:7"><rect class="o" x="240.2" y="95.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="239.4" y="95.0" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:3"><rect class="o" x="-0.6" y="145.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="-1.4" y="145.2" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:4"><rect class="o" x="49.8" y="143.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="49.0" y="143.2" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:5"><rect class="o" x="96.5" y="145.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="95.8" y="144.3" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="f" style="--i:6"><rect class="o" x="145.3" y="145.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="144.6" y="144.8" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:7"><rect class="o" x="191.8" y="143.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="191.0" y="142.8" width="40" height="40" rx="2"/></g>
-							<g class="lt" data-s="s" style="--i:8"><rect class="o" x="241.9" y="145.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="241.2" y="144.4" width="40" height="40" rx="2"/></g>
+	<!-- Dimensionen -->
+	<section class="block" aria-labelledby="dimensionen">
+		<h2 class="label" id="dimensionen">Sechs Dimensionen</h2>
+		<div class="body">
+			<p class="prose">
+				Jeder Wissensbaustein trägt seinen eigenen Zustand – auf sechs Dimensionen, die
+				unabhängig voneinander gesetzt werden. Dasselbe Mosaik sieht deshalb je nach
+				Dimension ganz anders aus. Wähle eine Dimension:
+			</p>
+			<div class="lens" data-lens>
+				<div class="lens-tabs" role="tablist" aria-label="Dimension wählen" hidden>
+					<button type="button" role="tab" id="tab-gueltigkeit" aria-controls="lens-gueltigkeit" aria-selected="true">Gültigkeit</button>
+					<button type="button" role="tab" id="tab-vertrauensgrad" aria-controls="lens-vertrauensgrad" aria-selected="false" tabindex="-1">Vertrauensgrad</button>
+					<button type="button" role="tab" id="tab-verbindlichkeit" aria-controls="lens-verbindlichkeit" aria-selected="false" tabindex="-1">Verbindlichkeit</button>
+					<button type="button" role="tab" id="tab-vertraulichkeit" aria-controls="lens-vertraulichkeit" aria-selected="false" tabindex="-1">Vertraulichkeit</button>
+					<button type="button" role="tab" id="tab-aufbewahrungszweck" aria-controls="lens-aufbewahrungszweck" aria-selected="false" tabindex="-1">Aufbewahrungszweck</button>
+					<button type="button" role="tab" id="tab-autonomiegrad" aria-controls="lens-autonomiegrad" aria-selected="false" tabindex="-1">Autonomiegrad</button>
+				</div>
+				<div class="lens-stage">
+					<figure class="lens-figure">
+						<svg class="lens-mosaic" viewBox="-3 -3 286 190" aria-hidden="true">
+							<g class="lt d0" data-s="s"><rect class="o" x="1.6" y="-0.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="0.8" y="-1.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d1" data-s="s"><rect class="o" x="47.5" y="1.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="46.8" y="1.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d2" data-s="s"><rect class="o" x="97.2" y="0.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="96.4" y="-0.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="f"><rect class="o" x="146.2" y="1.4" width="38.5" height="38.5" rx="2"/><rect class="f" x="145.4" y="0.6" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="c"><rect class="o" x="192.2" y="-0.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="191.4" y="-1.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="s"><rect class="o" x="239.3" y="1.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="238.6" y="1.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d1" data-s="s"><rect class="o" x="1.8" y="48.0" width="38.5" height="38.5" rx="2"/><rect class="f" x="1.0" y="47.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d2" data-s="s"><rect class="o" x="48.5" y="49.0" width="38.5" height="38.5" rx="2"/><rect class="f" x="47.8" y="48.3" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="s"><rect class="o" x="97.3" y="49.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="96.6" y="48.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="s"><rect class="o" x="143.8" y="47.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="143.0" y="46.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="f"><rect class="o" x="193.9" y="49.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="193.2" y="48.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d6" data-s="c"><rect class="o" x="239.9" y="50.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="239.2" y="49.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d2" data-s="s"><rect class="o" x="1.1" y="96.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="0.3" y="95.4" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="s"><rect class="o" x="49.5" y="95.3" width="38.5" height="38.5" rx="2"/><rect class="f" x="48.8" y="94.6" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="s"><rect class="o" x="95.5" y="97.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="94.8" y="97.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="s"><rect class="o" x="145.2" y="96.5" width="38.5" height="38.5" rx="2"/><rect class="f" x="144.4" y="95.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d6" data-s="s"><rect class="o" x="194.2" y="97.3" width="38.5" height="38.5" rx="2"/><rect class="f" x="193.4" y="96.6" width="40" height="40" rx="2"/></g>
+							<g class="lt d7" data-s="f"><rect class="o" x="240.2" y="95.8" width="38.5" height="38.5" rx="2"/><rect class="f" x="239.4" y="95.0" width="40" height="40" rx="2"/></g>
+							<g class="lt d3" data-s="s"><rect class="o" x="-0.6" y="145.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="-1.4" y="145.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d4" data-s="s"><rect class="o" x="49.8" y="143.9" width="38.5" height="38.5" rx="2"/><rect class="f" x="49.0" y="143.2" width="40" height="40" rx="2"/></g>
+							<g class="lt d5" data-s="s"><rect class="o" x="96.5" y="145.1" width="38.5" height="38.5" rx="2"/><rect class="f" x="95.8" y="144.3" width="40" height="40" rx="2"/></g>
+							<g class="lt d6" data-s="f"><rect class="o" x="145.3" y="145.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="144.6" y="144.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d7" data-s="s"><rect class="o" x="191.8" y="143.6" width="38.5" height="38.5" rx="2"/><rect class="f" x="191.0" y="142.8" width="40" height="40" rx="2"/></g>
+							<g class="lt d8" data-s="s"><rect class="o" x="241.9" y="145.2" width="38.5" height="38.5" rx="2"/><rect class="f" x="241.2" y="144.4" width="40" height="40" rx="2"/></g>
 						</svg>
-						</figure>
-						<div class="lens-panels">
+					</figure>
+					<div class="lens-panels">
 						<div class="lens-panel" role="tabpanel" id="lens-gueltigkeit" aria-labelledby="tab-gueltigkeit" data-states="sssfcsssssfcsssssfsssfss">
 							<h3>Gültigkeit</h3>
 							<p class="lens-def">Gilt das noch, oder wurde es abgelöst – und wenn ja, wodurch?</p>
@@ -248,29 +252,29 @@
 							<p class="lens-story">Einen Tippfehler im Styleguide korrigiert die KI selbst, Formulierungen im Handbuch passt sie im vereinbarten Rahmen an, am Spesenreglement macht sie nur Vorschläge. Wie viel Freiheit sie bekommt, entscheidet ein Mensch – bestätigen kann sie in keinem Fall.</p>
 							<ul class="lens-legend"><li><i class="sw sw-s" aria-hidden="true"></i>ändert eigenständig<span class="n">6</span></li><li><i class="sw sw-m" aria-hidden="true"></i>ändert im Rahmen<span class="n">9</span></li><li><i class="sw sw-o" aria-hidden="true"></i>darf nur vorschlagen<span class="n">9</span></li></ul>
 						</div>
-						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Format -->
-		<section class="block" aria-labelledby="format">
-			<h2 class="label" id="format">Eine Datei</h2>
-			<div class="body split">
-				<div>
-					<p class="statement statement-s">
-						KI-Modelle kommen und gehen, das Wissen bleibt. Wer den Anbieter wechselt, nimmt seine
-						Wissensbasis einfach mit.
-					</p>
-					<p class="prose">
-						Alles liegt als gewöhnliches Markdown in Git, im offenen Open Knowledge Format (OKF). Was taflux
-						über einen Wissensbaustein weiss, steht im YAML-Kopf der Datei – eine Zeile pro Wissensbaustein.
-						So bleibt jede Änderung im Diff lesbar, und ein einfaches <code>grep</code> findet sie. Beim
-						Export wird nichts übersetzt, sondern nur weggelassen, was nicht hinaus darf.
-					</p>
-				</div>
-				<pre class="code" aria-label="Beispiel eines YAML-Kopfs"><code><span class="k">type:</span> guideline
+	<!-- Format -->
+	<section class="block" aria-labelledby="format">
+		<h2 class="label" id="format">Eine Datei</h2>
+		<div class="body split">
+			<div>
+				<p class="statement statement-s">
+					KI-Modelle kommen und gehen, das Wissen bleibt. Wer den Anbieter wechselt, nimmt seine
+					Wissensbasis einfach mit.
+				</p>
+				<p class="prose">
+					Alles liegt als gewöhnliches Markdown in Git, im offenen Open Knowledge Format (OKF). Was taflux
+					über einen Wissensbaustein weiss, steht im YAML-Kopf der Datei – eine Zeile pro Wissensbaustein.
+					So bleibt jede Änderung im Diff lesbar, und ein einfaches <code>grep</code> findet sie. Beim
+					Export wird nichts übersetzt, sondern nur weggelassen, was nicht hinaus darf.
+				</p>
+			</div>
+			<pre class="code" aria-label="Beispiel eines YAML-Kopfs"><code><span class="k">type:</span> guideline
 <span class="k">title:</span> Spesenreglement
 <span class="k">status:</span> draft
 <span class="k">taflux:</span>
@@ -280,84 +284,84 @@
         tier: binding, classification: internal, … }
     - { id: sec-c2f9a1, validity: superseded,
         superseded_by: sec-d4e117, … }</code></pre>
-			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Teile -->
-		<section class="block" aria-labelledby="teile">
-			<h2 class="label" id="teile">Woraus taflux besteht</h2>
-			<ul class="body cells cells-2">
-				<li><h3>Format</h3><p class="sub">Open Knowledge Format (OKF) v0.2</p><p>Jede Markdown-Datei ist eine vollständige, gültige OKF-Datei – ohne Zusatzdatei und ohne Umwandlung beim Export. Was OKF nicht abdeckt, ergänzt taflux unter dem eigenen Schlüssel «taflux».</p></li>
-				<li><h3>Editor</h3><p class="sub">Erweiterter OKF-Editor auf Basis von Milkdown</p><p>Markdown für den Text, die sechs Dimensionen als Bedienelemente, dazu Prüfansicht und Drei-Spalten-Merge – so kann jeder mitarbeiten, auch ohne Git. Auf Deutsch, Französisch, Italienisch und Englisch.</p></li>
-				<li><h3>MCP-Server</h3><p class="sub">Model Context Protocol</p><p>Verbindet taflux mit jedem KI-System, das MCP spricht. Sucht nach Stichworten und nach Bedeutung zugleich, kennt die Verknüpfungen zwischen den Wissensbausteinen und führt für jede Vertrauensstufe einen eigenen Suchbestand.</p></li>
-				<li><h3>Team</h3><p class="sub">Gemeinsam, mit klaren Zuständigkeiten</p><p>Wer im Team etwas ablegt oder bestätigt, steht mit seinem Namen dafür ein – und taflux merkt sich, wer wann wofür geradesteht. Wer was lesen und ändern darf, lässt sich eingrenzen: aufs Projektteam, eine Abteilung oder die Geschäftsleitung.</p></li>
-			</ul>
-		</section>
+	<!-- Teile -->
+	<section class="block" aria-labelledby="teile">
+		<h2 class="label" id="teile">Woraus taflux besteht</h2>
+		<ul class="body cells cells-2">
+			<li><h3>Format</h3><p class="sub">Open Knowledge Format (OKF) v0.2</p><p>Jede Markdown-Datei ist eine vollständige, gültige OKF-Datei – ohne Zusatzdatei und ohne Umwandlung beim Export. Was OKF nicht abdeckt, ergänzt taflux unter dem eigenen Schlüssel «taflux».</p></li>
+			<li><h3>Editor</h3><p class="sub">Erweiterter OKF-Editor auf Basis von Milkdown</p><p>Markdown für den Text, die sechs Dimensionen als Bedienelemente, dazu Prüfansicht und Drei-Spalten-Merge – so kann jeder mitarbeiten, auch ohne Git. Auf Deutsch, Französisch, Italienisch und Englisch.</p></li>
+			<li><h3>MCP-Server</h3><p class="sub">Model Context Protocol</p><p>Verbindet taflux mit jedem KI-System, das MCP spricht. Sucht nach Stichworten und nach Bedeutung zugleich, kennt die Verknüpfungen zwischen den Wissensbausteinen und führt für jede Vertrauensstufe einen eigenen Suchbestand.</p></li>
+			<li><h3>Team</h3><p class="sub">Gemeinsam, mit klaren Zuständigkeiten</p><p>Wer im Team etwas ablegt oder bestätigt, steht mit seinem Namen dafür ein – und taflux merkt sich, wer wann wofür geradesteht. Wer was lesen und ändern darf, lässt sich eingrenzen: aufs Projektteam, eine Abteilung oder die Geschäftsleitung.</p></li>
+		</ul>
+	</section>
 
-		<!-- Stand -->
-		<section class="block" aria-labelledby="stand">
-			<h2 class="label" id="stand">Stand</h2>
-			<ol class="body timeline">
-				<li class="is-done">
-					<span class="when">Fertig</span>
-					<ul>
-						<li>Fundament, sechs Dimensionen, Suche und Editor</li>
-						<li>Vertraulichkeits-Routing: ein Suchbestand je Vertrauensstufe</li>
-						<li>OKF-basierend: Import, Vertrauensgrad abgeleitet, Bundle Export</li>
-						<li>Oberfläche in vier Sprachen (DE, FR, IT, EN)</li>
-					</ul>
-				</li>
-				<li class="is-now">
-					<span class="when">November 2026</span>
-					<ul>
-						<li>Bundles mit Leserkreis, Adressierung und Inbox</li>
-						<li>Geteilter Betrieb für Teams</li>
-						<li>taflux demo: ein vollständiges Demo-Repository mit einem einzigen Befehl</li>
-						<li>OKF-nativ: alles in einer Datei, Vertrauensgrad abgeleitet, Export als Filter</li>
-					</ul>
-				</li>
-				<li class="is-release">
-					<span class="when">30. November 2026</span>
-					<p data-release-row>Veröffentlichung als Open Source auf GitHub, unter <a href="https://github.com/taflux-org" rel="noopener">github.com/taflux-org</a>.</p>
-				</li>
-				<li>
-					<span class="when">Danach</span>
-					<dl class="roadmap">
-						<div><dt>Maschinelle Pflege</dt><dd>Die KI bereitet fällige Prüfungen vor und kümmert sich um kleine Änderungen – je nachdem, wie viel Freiheit man ihr vorher zugesteht, als Vorschlag oder gleich selbst. Bestätigen kann sie aber nichts: Was sie ändert, gilt erst wieder, wenn ein Mensch es abgesegnet hat.</dd></div>
-						<div><dt>Nachweis und Messung</dt><dd>Audit-Berichte, fälschungssichere Quittungen und ein reproduzierbarer Benchmark für die Suche.</dd></div>
-						<div><dt>Bestandsübernahme</dt><dd>Bestehende Dokumente übernehmen und in Wissensbausteine zerlegen, mit Schutz vor Personendaten.</dd></div>
-						<div><dt>Fakten-Tripel</dt><dd>Widersprüche werden nicht mehr nur vermutet, sondern regelbasiert erkannt – auch beim Zusammenführen von Änderungen.</dd></div>
-						<div><dt>Source Watcher</dt><dd>Ändert sich ein Quelldokument, legt taflux die betroffenen Wissensbausteine zur Prüfung vor.</dd></div>
-					</dl>
-				</li>
-			</ol>
-		</section>
+	<!-- Stand -->
+	<section class="block" aria-labelledby="stand">
+		<h2 class="label" id="stand">Stand</h2>
+		<ol class="body timeline">
+			<li class="is-done">
+				<span class="when">Fertig</span>
+				<ul>
+					<li>Fundament, sechs Dimensionen, Suche und Editor</li>
+					<li>Vertraulichkeits-Routing: ein Suchbestand je Vertrauensstufe</li>
+					<li>OKF-basierend: Import, Vertrauensgrad abgeleitet, Bundle Export</li>
+					<li>Oberfläche in vier Sprachen (DE, FR, IT, EN)</li>
+				</ul>
+			</li>
+			<li class="is-now">
+				<span class="when">November 2026</span>
+				<ul>
+					<li>Bundles mit Leserkreis, Adressierung und Inbox</li>
+					<li>Geteilter Betrieb für Teams</li>
+					<li>taflux demo: ein vollständiges Demo-Repository mit einem einzigen Befehl</li>
+					<li>OKF-nativ: alles in einer Datei, Vertrauensgrad abgeleitet, Export als Filter</li>
+				</ul>
+			</li>
+			<li class="is-release">
+				<span class="when">30. November 2026</span>
+				<p data-release-row>Veröffentlichung als Open Source auf GitHub, unter <a href="https://github.com/taflux-org" rel="noopener">github.com/taflux-org</a>.</p>
+			</li>
+			<li>
+				<span class="when">Danach</span>
+				<dl class="roadmap">
+					<div><dt>Maschinelle Pflege</dt><dd>Die KI bereitet fällige Prüfungen vor und kümmert sich um kleine Änderungen – je nachdem, wie viel Freiheit man ihr vorher zugesteht, als Vorschlag oder gleich selbst. Bestätigen kann sie aber nichts: Was sie ändert, gilt erst wieder, wenn ein Mensch es abgesegnet hat.</dd></div>
+					<div><dt>Nachweis und Messung</dt><dd>Audit-Berichte, fälschungssichere Quittungen und ein reproduzierbarer Benchmark für die Suche.</dd></div>
+					<div><dt>Bestandsübernahme</dt><dd>Bestehende Dokumente übernehmen und in Wissensbausteine zerlegen, mit Schutz vor Personendaten.</dd></div>
+					<div><dt>Fakten-Tripel</dt><dd>Widersprüche werden nicht mehr nur vermutet, sondern regelbasiert erkannt – auch beim Zusammenführen von Änderungen.</dd></div>
+					<div><dt>Source Watcher</dt><dd>Ändert sich ein Quelldokument, legt taflux die betroffenen Wissensbausteine zur Prüfung vor.</dd></div>
+				</dl>
+			</li>
+		</ol>
+	</section>
 
-		<!-- Mitmachen -->
-		<section class="block" id="mitmachen" aria-labelledby="mitmachen-titel">
-			<h2 class="label">Mitmachen</h2>
-			<div class="body">
-				<p class="statement" id="mitmachen-titel">Neugierig, kritisch oder mit Lust mitzumachen?</p>
-				<p class="prose">
-					Wenn Du an drei Stellen denkst: «Das ist falsch gelöst!» – dann will ich genau diese drei Stellen hören. Und zwar unbedingt!
-					<br><br>
-					Ob spontane Idee, konkreter Anwendungsfall, kritische Frage, Verbesserungsvorschlag oder einfach Lust auf ein bisschen Sparring: Schreib mir! Auch ein kurzer Gedanke, ein spontaner Impuls oder eine kritische Nachricht sind herzlich willkommen. Du musst weder ein fertiges Konzept noch eine ausgefeilte Lösung mitbringen.
-					<br><br>
-					Ich bin gespannt, was daraus entsteht. Vielleicht bleibt es ein Open-Source-Projekt, das gemeinsam immer besser wird. Vielleicht entwickelt sich daraus aber auch etwas viel Grösseres:
-					<br><br>
-					Ein Startup&nbsp;– <span style="text-wrap: nowrap;">GEMEINSAM MIT DIR!</span>
-				</p>
-				<p class="actions">
-					<a class="btn" href="#mitmachen" data-mail="taflux">Nachricht schreiben</a>
-					<a class="btn btn-quiet" href="https://github.com/taflux-org" rel="noopener">GitHub-Organisation ansehen</a>
-				</p>
-			</div>
-		</section>
-	</main>
+	<!-- Mitmachen -->
+	<section class="block" id="mitmachen" aria-labelledby="mitmachen-titel">
+		<h2 class="label">Mitmachen</h2>
+		<div class="body">
+			<p class="statement" id="mitmachen-titel">Neugierig, kritisch oder mit Lust mitzumachen?</p>
+			<p class="prose">
+				Wenn Du an drei Stellen denkst: «Das ist falsch gelöst!» – dann will ich genau diese drei Stellen hören. Und zwar unbedingt!
+				<br><br>
+				Ob spontane Idee, konkreter Anwendungsfall, kritische Frage, Verbesserungsvorschlag oder einfach Lust auf ein bisschen Sparring: Schreib mir! Auch ein kurzer Gedanke, ein spontaner Impuls oder eine kritische Nachricht sind herzlich willkommen. Du musst weder ein fertiges Konzept noch eine ausgefeilte Lösung mitbringen.
+				<br><br>
+				Ich bin gespannt, was daraus entsteht. Vielleicht bleibt es ein Open-Source-Projekt, das gemeinsam immer besser wird. Vielleicht entwickelt sich daraus aber auch etwas viel Grösseres:
+				<br><br>
+				Ein Startup&nbsp;– <span class="nowrap">GEMEINSAM MIT DIR!</span>
+			</p>
+			<p class="actions">
+				<a class="btn" href="#mitmachen" data-mail="taflux">Nachricht schreiben</a>
+				<a class="btn btn-quiet" href="https://github.com/taflux-org" rel="noopener">GitHub-Organisation ansehen</a>
+			</p>
+		</div>
+	</section>
+</main>
 
-	<footer class="foot wrap">
-		<p>taflux ist ein Open-Source-Projekt von G. Welsche, veröffentlicht unter der Apache-Lizenz 2.0.</p>
-		<p><a href="impressum.html">Impressum und Datenschutz</a></p>
-	</footer>
+<footer class="foot wrap">
+	<p>taflux ist ein Open-Source-Projekt von G. Welsche, veröffentlicht unter der Apache-Lizenz 2.0.</p>
+	<p><a href="impressum.html">Impressum und Datenschutz</a></p>
+</footer>
 </body>
 </html>
